@@ -1,0 +1,38 @@
+[1.978s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det': AMENT_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data
+[2.746s] running egg_info
+[2.747s] creating ../../build/obj_det/obj_det.egg-info
+[2.748s] writing ../../build/obj_det/obj_det.egg-info/PKG-INFO
+[2.748s] writing dependency_links to ../../build/obj_det/obj_det.egg-info/dependency_links.txt
+[2.748s] writing entry points to ../../build/obj_det/obj_det.egg-info/entry_points.txt
+[2.748s] writing requirements to ../../build/obj_det/obj_det.egg-info/requires.txt
+[2.749s] writing top-level names to ../../build/obj_det/obj_det.egg-info/top_level.txt
+[2.749s] writing manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+[2.752s] reading manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+[2.752s] adding license file 'LICENSE'
+[2.753s] writing manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+[2.754s] running build
+[2.754s] running build_py
+[2.754s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build
+[2.754s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib
+[2.755s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[2.755s] copying obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[2.755s] copying obj_det/__init__.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[2.755s] running install
+[2.755s] running install_lib
+[2.757s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[2.757s] copying /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[2.757s] copying /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det/__init__.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[2.759s] byte-compiling /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det/obj_det_node.py to obj_det_node.cpython-310.pyc
+[2.761s] byte-compiling /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det/__init__.py to __init__.cpython-310.pyc
+[2.762s] running install_data
+[2.762s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index
+[2.762s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index
+[2.762s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index/packages
+[2.763s] copying resource/obj_det -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index/packages
+[2.763s] copying package.xml -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det
+[2.763s] running install_egg_info
+[2.767s] Copying ../../build/obj_det/obj_det.egg-info to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det-0.0.0-py3.10.egg-info
+[2.768s] running install_scripts
+[2.819s] Installing obj_det_node script to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+[2.819s] writing list of installed files to '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log'
+[2.856s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det' returned '0': AMENT_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data

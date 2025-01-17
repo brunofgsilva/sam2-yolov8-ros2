@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/obj_det/obj_det.egg-info/PKG-INFO
+writing dependency_links to ../../build/obj_det/obj_det.egg-info/dependency_links.txt
+writing entry points to ../../build/obj_det/obj_det.egg-info/entry_points.txt
+writing requirements to ../../build/obj_det/obj_det.egg-info/requires.txt
+writing top-level names to ../../build/obj_det/obj_det.egg-info/top_level.txt
+reading manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+running build
+running build_py
+copying obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+running install
+running install_lib
+copying /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+byte-compiling /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det/obj_det_node.py to obj_det_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/obj_det/obj_det.egg-info to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det-0.0.0-py3.10.egg-info
+running install_scripts
+Installing obj_det_node script to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+writing list of installed files to '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log'

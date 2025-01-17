@@ -1,0 +1,202 @@
+[0.321s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.321s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x782ae7cc7bb0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x782ae7dfc8e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x782ae7dfc8e0>>, mixin_verb=('build',))
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.855s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.855s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/bruno/umib_sam2_yolov8_ros2_ws'
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.878s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.879s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extension 'ignore'
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extension 'ignore_ament_install'
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extensions ['colcon_pkg']
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extension 'colcon_pkg'
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extensions ['colcon_meta']
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extension 'colcon_meta'
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extensions ['ros']
+[0.882s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces_pkg) by extension 'ros'
+[0.887s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interfaces_pkg' with type 'ros.ament_cmake' and name 'interfaces_pkg'
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extensions ['ignore', 'ignore_ament_install']
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extension 'ignore'
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extension 'ignore_ament_install'
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extensions ['colcon_pkg']
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extension 'colcon_pkg'
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extensions ['colcon_meta']
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extension 'colcon_meta'
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extensions ['ros']
+[0.888s] Level 1:colcon.colcon_core.package_identification:_identify(src/obj_det) by extension 'ros'
+[0.890s] DEBUG:colcon.colcon_core.package_identification:Package 'src/obj_det' with type 'ros.ament_python' and name 'obj_det'
+[0.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.941s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.950s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 45 installed packages in /home/bruno/charmie_ws/install
+[0.951s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/bruno/dev_ws/install
+[0.956s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 356 installed packages in /opt/ros/humble
+[0.959s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_args' from command line to 'None'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_target' from command line to 'None'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[1.062s] Level 5:colcon.colcon_core.verb:set package 'interfaces_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.062s] DEBUG:colcon.colcon_core.verb:Building package 'interfaces_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg', 'merge_install': False, 'path': '/home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg', 'symlink_install': False, 'test_result_base': None}
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_args' from command line to 'None'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_target' from command line to 'None'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_clean_cache' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_clean_first' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'cmake_force_configure' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'ament_cmake_args' from command line to 'None'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'catkin_cmake_args' from command line to 'None'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'obj_det' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.063s] DEBUG:colcon.colcon_core.verb:Building package 'obj_det' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det', 'merge_install': False, 'path': '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det', 'symlink_install': False, 'test_result_base': None}
+[1.064s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.065s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.065s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg' with build type 'ament_cmake'
+[1.066s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg'
+[1.072s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.072s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.072s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.096s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DCMAKE_INSTALL_PREFIX=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[8.295s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DCMAKE_INSTALL_PREFIX=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[8.298s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j8 -l8
+[13.872s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j8 -l8
+[14.152s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[14.356s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces_pkg)
+[14.358s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[14.364s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg' for CMake module files
+[14.365s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg' for CMake config files
+[14.365s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces_pkg', 'cmake_prefix_path')
+[14.366s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.ps1'
+[14.367s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.dsv'
+[14.367s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.sh'
+[14.369s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib'
+[14.369s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces_pkg', 'ld_library_path_lib')
+[14.369s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.ps1'
+[14.370s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.dsv'
+[14.370s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.sh'
+[14.371s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/bin'
+[14.371s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/pkgconfig/interfaces_pkg.pc'
+[14.372s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/python3.10/site-packages'
+[14.372s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/bin'
+[14.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.ps1'
+[14.374s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.dsv'
+[14.375s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.sh'
+[14.376s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.bash'
+[14.377s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.zsh'
+[14.378s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/colcon-core/packages/interfaces_pkg)
+[14.636s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces_pkg)
+[14.636s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg' for CMake module files
+[14.637s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg' for CMake config files
+[14.638s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces_pkg', 'cmake_prefix_path')
+[14.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.ps1'
+[14.639s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.dsv'
+[14.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/cmake_prefix_path.sh'
+[14.640s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib'
+[14.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces_pkg', 'ld_library_path_lib')
+[14.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.ps1'
+[14.642s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.dsv'
+[14.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/hook/ld_library_path_lib.sh'
+[14.643s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/bin'
+[14.643s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/pkgconfig/interfaces_pkg.pc'
+[14.643s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/python3.10/site-packages'
+[14.644s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/bin'
+[14.644s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.ps1'
+[14.645s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.dsv'
+[14.646s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.sh'
+[14.647s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.bash'
+[14.648s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.zsh'
+[14.648s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/colcon-core/packages/interfaces_pkg)
+[14.649s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det' with build type 'ament_python'
+[14.650s] Level 1:colcon.colcon_core.shell:create_environment_hook('obj_det', 'ament_prefix_path')
+[14.650s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/ament_prefix_path.ps1'
+[14.651s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/ament_prefix_path.dsv'
+[14.652s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/ament_prefix_path.sh'
+[14.653s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[14.653s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[15.486s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det'
+[15.486s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[15.486s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[16.629s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det': AMENT_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data
+[17.506s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det' for CMake module files
+[17.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det' returned '0': AMENT_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data
+[17.508s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det' for CMake config files
+[17.509s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib'
+[17.509s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/bin'
+[17.509s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/pkgconfig/obj_det.pc'
+[17.509s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages'
+[17.509s] Level 1:colcon.colcon_core.shell:create_environment_hook('obj_det', 'pythonpath')
+[17.510s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/pythonpath.ps1'
+[17.510s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/pythonpath.dsv'
+[17.511s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/hook/pythonpath.sh'
+[17.512s] Level 1:colcon.colcon_core.environment:checking '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/bin'
+[17.512s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(obj_det)
+[17.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/package.ps1'
+[17.513s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/package.dsv'
+[17.514s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/package.sh'
+[17.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/package.bash'
+[17.515s] INFO:colcon.colcon_core.shell:Creating package script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det/package.zsh'
+[17.516s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/colcon-core/packages/obj_det)
+[17.517s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[17.517s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[17.517s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[17.517s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[17.530s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[17.530s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[17.530s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[17.555s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[17.556s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/local_setup.ps1'
+[17.557s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bruno/umib_sam2_yolov8_ros2_ws/install/_local_setup_util_ps1.py'
+[17.560s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/setup.ps1'
+[17.566s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/local_setup.sh'
+[17.567s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bruno/umib_sam2_yolov8_ros2_ws/install/_local_setup_util_sh.py'
+[17.568s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/setup.sh'
+[17.574s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/local_setup.bash'
+[17.575s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/setup.bash'
+[17.580s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/local_setup.zsh'
+[17.581s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bruno/umib_sam2_yolov8_ros2_ws/install/setup.zsh'

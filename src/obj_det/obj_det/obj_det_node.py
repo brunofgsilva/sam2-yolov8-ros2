@@ -10,6 +10,8 @@ import cv2
 
 import time
 
+from pathlib import Path
+
 class Yolo_det(Node):
     def __init__(self):
         super().__init__("Yolo_det")
@@ -22,8 +24,12 @@ class Yolo_det(Node):
         self.object_model = YOLO('yolov8m.pt')
         print("Sucessfully imported YOLO model")
         
-        self.video_path = '/home/bruno/umibots_ws/src/obj_det/obj_det/cereal_box.mp4'
-        # self.video_path = None  # Default to None for webcam
+        self.home = str(Path.home())
+        midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
+        video_name = 'birds.mp4'
+        
+        # self.video_path = self.home + '/' + midpath_videos + '/' + video_name
+        self.video_path = None  # Default to None for webcam
 
         # self.cap = cv2.VideoCapture(0) 
         self.br = CvBridge()

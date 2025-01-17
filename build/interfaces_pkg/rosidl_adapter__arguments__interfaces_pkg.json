@@ -1,0 +1,7 @@
+{
+  "package_name": "interfaces_pkg",
+  "non_idl_tuples": [
+    "/home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/DetectedObject.msg",
+    "/home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/Yolov8Objects.msg"
+  ]
+}
