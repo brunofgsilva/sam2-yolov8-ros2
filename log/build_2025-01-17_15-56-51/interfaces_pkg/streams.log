@@ -1,0 +1,253 @@
+[0.033s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DCMAKE_INSTALL_PREFIX=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[0.179s] -- The C compiler identification is GNU 11.4.0
+[0.301s] -- The CXX compiler identification is GNU 11.4.0
+[0.318s] -- Detecting C compiler ABI info
+[0.493s] -- Detecting C compiler ABI info - done
+[0.510s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.510s] -- Detecting C compile features
+[0.512s] -- Detecting C compile features - done
+[0.518s] -- Detecting CXX compiler ABI info
+[0.698s] -- Detecting CXX compiler ABI info - done
+[0.714s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.715s] -- Detecting CXX compile features
+[0.716s] -- Detecting CXX compile features - done
+[0.734s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.439s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.889s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.925s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.977s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.199s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.366s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[2.793s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[3.034s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[4.323s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[5.421s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[6.821s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.949s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[6.965s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[7.089s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[7.089s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[7.089s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[7.089s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[7.199s] -- Found PythonExtra: .so  
+[7.599s] -- Configuring done
+[7.688s] -- Generating done
+[7.694s] -- Build files have been written to: /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[7.709s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/bruno/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DCMAKE_INSTALL_PREFIX=/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[7.713s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j8 -l8
+[7.811s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.839s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[7.863s] [  5%] Built target ament_cmake_python_copy_interfaces_pkg
+[8.612s] [  5%] Built target interfaces_pkg__cpp
+[8.613s] [  7%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/yolov8_objects__functions.c.o[0m
+[8.613s] [ 10%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/detected_object__functions.c.o[0m
+[8.644s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[8.651s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[8.651s] [ 17%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[8.773s] [ 20%] [32m[1mLinking C shared library libinterfaces_pkg__rosidl_generator_c.so[0m
+[8.785s] running egg_info
+[8.787s] creating interfaces_pkg.egg-info
+[8.788s] writing interfaces_pkg.egg-info/PKG-INFO
+[8.788s] writing dependency_links to interfaces_pkg.egg-info/dependency_links.txt
+[8.789s] writing top-level names to interfaces_pkg.egg-info/top_level.txt
+[8.789s] writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[8.795s] reading manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[8.796s] writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[8.854s] [ 20%] Built target ament_cmake_python_build_interfaces_pkg_egg
+[8.870s] [ 20%] Built target interfaces_pkg__rosidl_generator_c
+[8.904s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[8.906s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[8.911s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[9.638s] [ 30%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/yolov8_objects__type_support.cpp.o[0m
+[9.641s] [ 33%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/detected_object__type_support.cpp.o[0m
+[9.722s] [ 35%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/yolov8_objects__type_support.cpp.o[0m
+[9.728s] [ 38%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/detected_object__type_support.cpp.o[0m
+[9.762s] [ 41%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_c.so[0m
+[9.882s] [ 43%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/detected_object__type_support.cpp.o[0m
+[9.895s] [ 46%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/yolov8_objects__type_support.cpp.o[0m
+[9.916s] [ 48%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/detected_object__type_support_c.cpp.o[0m
+[9.929s] [ 48%] Built target interfaces_pkg__rosidl_typesupport_c
+[9.981s] [ 51%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/yolov8_objects__type_support_c.cpp.o[0m
+[9.985s] [ 53%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/detected_object__type_support.cpp.o[0m
+[10.251s] [ 56%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/detected_object__type_support.c.o[0m
+[10.386s] [ 58%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/yolov8_objects__type_support.c.o[0m
+[10.528s] [ 61%] [32m[1mLinking C shared library libinterfaces_pkg__rosidl_typesupport_introspection_c.so[0m
+[10.650s] [ 61%] Built target interfaces_pkg__rosidl_typesupport_introspection_c
+[10.679s] [ 64%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/yolov8_objects__type_support.cpp.o[0m
+[10.715s] [ 66%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_cpp.so[0m
+[10.869s] [ 66%] Built target interfaces_pkg__rosidl_typesupport_cpp
+[11.136s] [ 69%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so[0m
+[11.172s] [ 71%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so[0m
+[11.311s] [ 71%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c
+[11.343s] [ 71%] Built target interfaces_pkg__rosidl_typesupport_introspection_cpp
+[11.749s] [ 74%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so[0m
+[11.906s] [ 74%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_cpp
+[11.961s] [ 74%] Built target interfaces_pkg
+[12.015s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[12.999s] [ 76%] Built target interfaces_pkg__py
+[13.052s] [ 82%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_yolov8_objects_s.c.o[0m
+[13.052s] [ 82%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_detected_object_s.c.o[0m
+[13.317s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so[0m
+[13.419s] [ 84%] Built target interfaces_pkg__rosidl_generator_py
+[13.473s] [ 87%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[13.474s] [ 92%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c.o[0m
+[13.474s] [ 92%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[13.713s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.714s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.720s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.831s] [100%] Built target interfaces_pkg__rosidl_typesupport_c__pyext
+[13.834s] [100%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext
+[13.842s] [100%] Built target interfaces_pkg__rosidl_typesupport_introspection_c__pyext
+[13.870s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j8 -l8
+[14.170s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[14.189s] -- Install configuration: ""
+[14.189s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/rosidl_interfaces/interfaces_pkg
+[14.189s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.190s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.190s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.190s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__struct.h
+[14.191s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__type_support.h
+[14.191s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__functions.c
+[14.191s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__struct.h
+[14.191s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__type_support.h
+[14.192s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__functions.h
+[14.192s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__functions.c
+[14.192s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__functions.h
+[14.192s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/yolov8_objects.h
+[14.193s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detected_object.h
+[14.193s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_generator_c__visibility_control.h
+[14.193s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.sh
+[14.194s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.dsv
+[14.194s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so
+[14.195s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so" to ""
+[14.195s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.195s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.196s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.196s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_fastrtps_c.h
+[14.196s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_fastrtps_c.h
+[14.196s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[14.196s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so
+[14.197s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so" to ""
+[14.198s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.198s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.198s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.198s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_introspection_c.h
+[14.198s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__type_support.c
+[14.199s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__type_support.c
+[14.199s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_introspection_c.h
+[14.199s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[14.200s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so
+[14.200s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so" to ""
+[14.201s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so
+[14.201s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so" to ""
+[14.202s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.202s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.202s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.202s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__traits.hpp
+[14.203s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__struct.hpp
+[14.203s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__traits.hpp
+[14.203s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__builder.hpp
+[14.203s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__builder.hpp
+[14.204s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__struct.hpp
+[14.204s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/yolov8_objects.hpp
+[14.204s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detected_object.hpp
+[14.204s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.204s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.204s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.205s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_fastrtps_cpp.hpp
+[14.205s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/dds_fastrtps
+[14.205s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_fastrtps_cpp.hpp
+[14.205s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[14.206s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so
+[14.207s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""
+[14.207s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg
+[14.207s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg
+[14.208s] -- Up-to-date: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail
+[14.208s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__type_support.cpp
+[14.208s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__type_support.cpp
+[14.208s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_introspection_cpp.hpp
+[14.208s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_introspection_cpp.hpp
+[14.209s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so
+[14.210s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so" to ""
+[14.210s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so
+[14.211s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so" to ""
+[14.211s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.sh
+[14.211s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.dsv
+[14.211s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info
+[14.212s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/dependency_links.txt
+[14.212s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/top_level.txt
+[14.212s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/SOURCES.txt
+[14.213s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/PKG-INFO
+[14.213s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg
+[14.213s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so
+[14.213s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[14.214s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[14.214s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c
+[14.214s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object.py
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object_s.c
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects_s.c
+[14.215s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py
+[14.216s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects.py
+[14.216s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[14.216s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py
+[14.357s] Listing '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg'...
+[14.357s] Compiling '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py'...
+[14.357s] Listing '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg'...
+[14.357s] Compiling '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py'...
+[14.357s] Compiling '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object.py'...
+[14.358s] Compiling '/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects.py'...
+[14.368s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[14.369s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[14.369s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[14.370s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[14.371s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[14.372s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[14.372s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so
+[14.373s] -- Set runtime path of "/home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so" to ""
+[14.374s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectedObject.idl
+[14.374s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Yolov8Objects.idl
+[14.374s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectedObject.msg
+[14.375s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Yolov8Objects.msg
+[14.375s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/package_run_dependencies/interfaces_pkg
+[14.375s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/parent_prefix_path/interfaces_pkg
+[14.376s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.sh
+[14.376s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.dsv
+[14.376s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.sh
+[14.376s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.dsv
+[14.377s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.bash
+[14.377s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.sh
+[14.377s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.zsh
+[14.378s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.dsv
+[14.378s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.dsv
+[14.378s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/packages/interfaces_pkg
+[14.379s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport.cmake
+[14.379s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport-noconfig.cmake
+[14.380s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport.cmake
+[14.380s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[14.380s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport.cmake
+[14.381s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[14.381s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport.cmake
+[14.381s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport-noconfig.cmake
+[14.382s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cppExport.cmake
+[14.382s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport.cmake
+[14.382s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[14.383s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport.cmake
+[14.383s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[14.383s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport.cmake
+[14.384s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport-noconfig.cmake
+[14.384s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport.cmake
+[14.384s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport-noconfig.cmake
+[14.385s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake-extras.cmake
+[14.385s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_dependencies-extras.cmake
+[14.385s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_include_directories-extras.cmake
+[14.386s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_libraries-extras.cmake
+[14.386s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_targets-extras.cmake
+[14.386s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[14.386s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[14.387s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig.cmake
+[14.387s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig-version.cmake
+[14.387s] -- Installing: /home/bruno/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.xml
+[14.392s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/bruno/test_ws/install/obj_det:/home/bruno/umibots_ws/install/obj_det:/home/bruno/umibots_ws/install/my_package:/home/bruno/charmie_ws/install/charmie_yolo_pose:/home/bruno/charmie_ws/install/charmie_yolo_objects:/home/bruno/charmie_ws/install/charmie_storing_groceries:/home/bruno/charmie_ws/install/charmie_stickler_for_the_rules:/home/bruno/charmie_ws/install/charmie_speakers:/home/bruno/charmie_ws/install/charmie_serve_breakfast:/home/bruno/charmie_ws/install/charmie_restaurant:/home/bruno/charmie_ws/install/charmie_receptionist:/home/bruno/charmie_ws/install/charmie_ps4_controller:/home/bruno/charmie_ws/install/charmie_point_cloud:/home/bruno/charmie_ws/install/charmie_person_recognition:/home/bruno/charmie_ws/install/charmie_odometry:/home/bruno/charmie_ws/install/charmie_obstacles:/home/bruno/charmie_ws/install/charmie_neck_dynamixel:/home/bruno/charmie_ws/install/charmie_navigation_sdnl:/home/bruno/charmie_ws/install/charmie_low_level:/home/bruno/charmie_ws/install/charmie_localisation:/home/bruno/charmie_ws/install/charmie_llm:/home/bruno/charmie_ws/install/charmie_lidar_hokuyo:/home/bruno/charmie_ws/install/charmie_inspection:/home/bruno/charmie_ws/install/charmie_gpsr:/home/bruno/charmie_ws/install/charmie_face:/home/bruno/charmie_ws/install/charmie_demonstration:/home/bruno/charmie_ws/install/charmie_debug:/home/bruno/charmie_ws/install/charmie_clean_table:/home/bruno/charmie_ws/install/charmie_carry_luggage:/home/bruno/charmie_ws/install/charmie_audio:/home/bruno/charmie_ws/install/charmie_door_start:/home/bruno/charmie_ws/install/charmie_diagnostics:/home/bruno/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg

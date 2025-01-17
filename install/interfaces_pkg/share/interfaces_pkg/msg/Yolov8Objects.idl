@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces_pkg/msg/Yolov8Objects.msg
+// generated code does not contain a copyright notice
+
+#include "interfaces_pkg/msg/DetectedObject.idl"
+
+module interfaces_pkg {
+  module msg {
+    struct Yolov8Objects {
+      int32 num_objects;
+
+      sequence<interfaces_pkg::msg::DetectedObject> objects;
+    };
+  };
+};

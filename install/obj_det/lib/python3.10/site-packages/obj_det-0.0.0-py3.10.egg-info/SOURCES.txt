@@ -1,0 +1,17 @@
+LICENSE
+package.xml
+setup.cfg
+setup.py
+../../build/obj_det/obj_det.egg-info/PKG-INFO
+../../build/obj_det/obj_det.egg-info/SOURCES.txt
+../../build/obj_det/obj_det.egg-info/dependency_links.txt
+../../build/obj_det/obj_det.egg-info/entry_points.txt
+../../build/obj_det/obj_det.egg-info/requires.txt
+../../build/obj_det/obj_det.egg-info/top_level.txt
+../../build/obj_det/obj_det.egg-info/zip-safe
+obj_det/__init__.py
+obj_det/obj_det_node.py
+resource/obj_det
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
