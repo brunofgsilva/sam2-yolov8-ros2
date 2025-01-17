@@ -8,6 +8,8 @@ from interfaces_pkg.msg import DetectedObject, Yolov8Objects
 from cv_bridge import CvBridge
 import cv2
 
+from sam2.build_sam import build_sam2_camera_predictor
+
 import time
 
 from pathlib import Path
@@ -18,21 +20,31 @@ class Yolo_det(Node):
         self.get_logger().info("Initialised Yolo Object Node")
         print('Hi from obj_det.')
         
+        self.first_time = True
+        
         # Publish Results
         self.detected_objects_publisher = self.create_publisher(Yolov8Objects, 'objects_detected_filtered', 10)
         
         self.object_model = YOLO('yolov8m.pt')
         print("Sucessfully imported YOLO model")
         
+        # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
         video_name = 'birds.mp4'
         
-        # self.video_path = self.home + '/' + midpath_videos + '/' + video_name
-        self.video_path = None  # Default to None for webcam
+        self.video_path = self.home + '/' + midpath_videos + '/' + video_name
+        # self.video_path = None  # Default to None for webcam
+        
+        
+        # Define model and configurations
+        sam2_checkpoint = self.home+"/sam2/checkpoints/sam2.1_hiera_small.pt"
+        model_cfg = "configs/sam2.1/sam2.1_hiera_s.yaml"
+        self.predictor = build_sam2_camera_predictor(model_cfg, sam2_checkpoint)
 
-        # self.cap = cv2.VideoCapture(0) 
         self.br = CvBridge()
+        self.tracking_received_points = []
+        self.tracking_received_labels = []
         
         if self.video_path:
             self.cap = cv2.VideoCapture(self.video_path)
@@ -87,6 +99,7 @@ class Yolo_det(Node):
         # print(model)
         # print(camera)
         # print(current_frame)
+        copy_frame = current_frame.copy()
         object_results = model.track(current_frame, persist=True, tracker="bytetrack.yaml")
         num_obj = len(object_results[0])
         print('---------------------')
@@ -102,6 +115,8 @@ class Yolo_det(Node):
         yolov8_objects = Yolov8Objects()
         
         num_obj_filtered = 0
+        
+        self.tracking_received_points.clear()
         
         for object_idx in range(num_obj):
             
@@ -137,9 +152,6 @@ class Yolo_det(Node):
                 yolov8_objects.objects.append(det_obj)
                 
                 
-                if class_name == 'book':
-                    self.counter += 1
-                
                 print('\n\n\n\n')
                 print('Class Name: ', class_name)
                 print('Class ID: ', class_id)
@@ -147,6 +159,12 @@ class Yolo_det(Node):
                 print('Width: ', box_width, 'Height', box_height)
                 print('Center :', center_x,', ', center_y)
                 
+                if class_name == 'birds':
+                    self.counter += 1
+                    self.tracking_received_points.append((center_x, center_y))
+                    self.tracking_received_labels.append(class_name)
+                
+                                
                 cv2.circle(
                     current_frame,
                     (center_x, center_y),
@@ -173,7 +191,7 @@ class Yolo_det(Node):
                     2  # Line thickness
                 )
         
-        print(self.counter, ' books detected.')
+        print(self.counter, ' birds detected.')
         self.counter = 0
         yolov8_objects.num_objects = num_obj_filtered
         self.detected_objects_publisher.publish(yolov8_objects)
@@ -184,7 +202,47 @@ class Yolo_det(Node):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             self.get_logger().info('Exiting...')
             self.destroy_node()
+    
+        with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
+            sam2_tracking(14, self.tracking_received_points, self.tracking_received_labels)
+    
+    # def get_pc(self, center_x, center_y):
+    #     print('pc')
+    
+    def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels):
+        
+        if self.first_time:
+            _, out_obj_ids, out_mask_logits = self.predictor.add_new_prompt(
+                frame_idx=0,  # First frame
+                obj_id=initial_obj_id,
+                points=tracking_received_points,
+                labels=tracking_received_labels
+            )
+            self.first_time = False
             
+        else:
+            # Track object in subsequent frames
+            out_obj_ids, out_mask_logits = self.predictor.track(frame)
+            
+            # Convert logits to binary mask
+            mask = (out_mask_logits[0] > 0).cpu().numpy().astype("uint8") * 255  # Binary mask, 2D
+
+            # Ensure the mask is 2D before applying colormap
+            if mask.ndim == 3:
+                mask = mask.squeeze()  # Remove extra dimensions if present
+
+            # Apply colormap for visualization
+            mask_colored = cv2.applyColorMap(mask, cv2.COLORMAP_JET)
+
+            # Blend the mask with the frame
+            overlay = cv2.addWeighted(frame, 0.7, mask_colored, 0.3, 0)
+
+            # Display the result
+            cv2.imshow("Segmented Object", overlay)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                self.get_logger().info('Exiting...')
+                self.destroy_node()
+
 def main(args=None):
     rclpy.init(args=args)
     node = Yolo_det()
