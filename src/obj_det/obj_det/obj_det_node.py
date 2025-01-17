@@ -258,6 +258,28 @@ class Yolo_det(Node):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 self.get_logger().info('Exiting...')
                 self.destroy_node()
+                
+            cv2.imshow("Original frame", frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                self.get_logger().info('Exiting...')
+                self.destroy_node()
+              
+            #Start analysing data from contours  
+            contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+            polygons = []
+            for obj in contours:
+                coords = []
+                    
+                # for point in obj:
+                #     coords.append(int(point[0][0]))
+                #     coords.append(int(point[0][1]))
+                for point in obj:
+                    coords.append([int(point[0][0]), int(point[0][1])])  # Store as [x, y]
+                polygons.append(coords)
+                # polygons.append(coords)
+            
+            print('POLYGONS: ', polygons)
+            
 
 def main(args=None):
     rclpy.init(args=args)
