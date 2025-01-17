@@ -118,6 +118,8 @@ class Yolo_det(Node):
         
         num_obj_filtered = 0
         
+        self.tracking_received_points.clear()
+        self.tracking_received_labels.clear()
         
         
         for object_idx in range(num_obj):
@@ -161,8 +163,7 @@ class Yolo_det(Node):
                 print('Width: ', box_width, 'Height', box_height)
                 print('Center :', center_x,', ', center_y)
                 
-                self.tracking_received_points.clear()
-                self.tracking_received_labels.clear()
+                
                 
                 if class_name == 'orange':
                     self.counter += 1
@@ -209,7 +210,7 @@ class Yolo_det(Node):
         #     self.destroy_node()
     
         with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-            self.sam2_tracking(1, self.tracking_received_points, self.tracking_received_labels, copy_frame)
+            self.sam2_tracking(14, self.tracking_received_points, self.tracking_received_labels, copy_frame)
     
     # def get_pc(self, center_x, center_y):
     #     print('pc')
@@ -240,14 +241,14 @@ class Yolo_det(Node):
             if mask.ndim == 3:
                 mask = mask.squeeze()  # Remove extra dimensions if present
 
-            # Apply colormap for visualization
-            mask_colored = cv2.applyColorMap(mask, cv2.COLORMAP_JET)
+            # Create a white mask where the object is segmented
+            white_mask = (mask > 0).astype("uint8") * 255  # Binary mask, 2D with white pixels
 
-            # Blend the mask with the frame
-            overlay = cv2.addWeighted(frame, 0.7, mask_colored, 0.3, 0)
+            # Apply the white mask to the frame
+            frame_with_mask = cv2.bitwise_and(frame, frame, mask=white_mask)
 
             # Display the result
-            cv2.imshow("Segmented Object", overlay)
+            cv2.imshow("Segmented Object", frame_with_mask)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 self.get_logger().info('Exiting...')
                 self.destroy_node()
