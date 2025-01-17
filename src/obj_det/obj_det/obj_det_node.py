@@ -33,7 +33,7 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'birds.mp4'
+        video_name = 'balls.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
         # self.video_path = None  # Default to None for webcam
@@ -118,7 +118,7 @@ class Yolo_det(Node):
         
         num_obj_filtered = 0
         
-        self.tracking_received_points.clear()
+        
         
         for object_idx in range(num_obj):
             
@@ -161,10 +161,13 @@ class Yolo_det(Node):
                 print('Width: ', box_width, 'Height', box_height)
                 print('Center :', center_x,', ', center_y)
                 
-                if class_name == 'bird':
+                self.tracking_received_points.clear()
+                self.tracking_received_labels.clear()
+                
+                if class_name == 'orange':
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
-                    self.tracking_received_labels.append(class_name)
+                    self.tracking_received_labels.append(1)
                 
                                 
                 cv2.circle(
@@ -206,14 +209,15 @@ class Yolo_det(Node):
         #     self.destroy_node()
     
         with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-            self.sam2_tracking(1, self.tracking_received_points, self.tracking_received_labels)
+            self.sam2_tracking(1, self.tracking_received_points, self.tracking_received_labels, copy_frame)
     
     # def get_pc(self, center_x, center_y):
     #     print('pc')
     
-    def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels):
+    def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels, frame):
         print('sam2_tracking')
         if self.first_time:
+            self.predictor.load_first_frame(frame)
             print('first time')
             _, out_obj_ids, out_mask_logits = self.predictor.add_new_prompt(
                 frame_idx=0,  # First frame
