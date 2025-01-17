@@ -22,7 +22,8 @@ class Yolo_det(Node):
         self.get_logger().info("Initialised Yolo Object Node")
         print('Hi from obj_det.')
         
-        self.first_time = True
+        self.first_time = False
+        self.prev_nr_obj = 0
         
         # Publish Results
         self.detected_objects_publisher = self.create_publisher(Yolov8Objects, 'objects_detected_filtered', 10)
@@ -33,14 +34,14 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'balls.mp4'
+        video_name = 'birds.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
         # self.video_path = None  # Default to None for webcam
         
         
         # Define model and configurations
-        sam2_checkpoint = self.home+"/sam2/checkpoints/sam2.1_hiera_small.pt"
+        sam2_checkpoint = self.home+"/Bruno/sam2/checkpoints/sam2.1_hiera_small.pt"
         model_cfg = "configs/sam2.1/sam2.1_hiera_s.yaml"
         self.predictor = build_sam2_camera_predictor(model_cfg, sam2_checkpoint)
 
@@ -165,7 +166,7 @@ class Yolo_det(Node):
                 
                 
                 
-                if class_name == 'orange':
+                if class_name == 'bird':
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
                     self.tracking_received_labels.append(1)
@@ -198,6 +199,11 @@ class Yolo_det(Node):
                 )
         
         print(self.counter, ' birds detected.')
+        if self.prev_nr_obj == self.counter:
+            self.first_time = False
+        else:
+            self.first_time = True
+        self.prev_nr_obj = self.counter
         self.counter = 0
         yolov8_objects.num_objects = num_obj_filtered
         self.detected_objects_publisher.publish(yolov8_objects)
