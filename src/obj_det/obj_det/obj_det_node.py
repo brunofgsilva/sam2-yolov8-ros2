@@ -34,7 +34,7 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'birds.mp4'
+        video_name = 'cars.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
         # self.video_path = None  # Default to None for webcam
@@ -130,7 +130,7 @@ class Yolo_det(Node):
             boxes_id = object_results[0].boxes[object_idx]
             object_confidence = boxes_id.conf[0].item()
             
-            if object_confidence > 0.5:
+            if object_confidence > 0.2:
                 num_obj_filtered += 1
                 box_top_left_x = int(boxes_id.xyxy[0][0])
                 box_top_left_y = int(boxes_id.xyxy[0][1])
@@ -166,7 +166,7 @@ class Yolo_det(Node):
                 
                 
                 
-                if class_name == 'bird':
+                if class_name == 'car':
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
                     self.tracking_received_labels.append(1)
@@ -198,7 +198,7 @@ class Yolo_det(Node):
                     2  # Line thickness
                 )
         
-        print(self.counter, ' birds detected.')
+        print(self.counter, ' cars detected.')
         if self.prev_nr_obj == self.counter:
             self.first_time = False
         else:
@@ -214,9 +214,9 @@ class Yolo_det(Node):
         # if cv2.waitKey(1) & 0xFF == ord('q'):
         #     self.get_logger().info('Exiting...')
         #     self.destroy_node()
-    
-        with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-            self.sam2_tracking(14, self.tracking_received_points, self.tracking_received_labels, copy_frame)
+        if self.prev_nr_obj != 0:
+            with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
+                self.sam2_tracking(14, self.tracking_received_points, self.tracking_received_labels, copy_frame)
     
     # def get_pc(self, center_x, center_y):
     #     print('pc')
