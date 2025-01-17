@@ -8,6 +8,8 @@ from interfaces_pkg.msg import DetectedObject, Yolov8Objects
 from cv_bridge import CvBridge
 import cv2
 
+import numpy as np
+
 import torch
 
 from sam2.build_sam import build_sam2_camera_predictor
@@ -34,7 +36,7 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'bycicle.mp4'
+        video_name = 'oranges.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
         # self.video_path = None  # Default to None for webcam
@@ -121,6 +123,8 @@ class Yolo_det(Node):
         
         self.tracking_received_points.clear()
         self.tracking_received_labels.clear()
+
+        desired_class = 'orange'
         
         
         for object_idx in range(num_obj):
@@ -162,11 +166,9 @@ class Yolo_det(Node):
                 print('Class ID: ', class_id)
                 print('Detection confidence: ', object_confidence)
                 print('Width: ', box_width, 'Height', box_height)
-                print('Center :', center_x,', ', center_y)
+                print('Center :', center_x,', ', center_y)       
                 
-                
-                
-                if class_name == 'bicycle':
+                if class_name == desired_class:
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
                     self.tracking_received_labels.append(1)
@@ -198,7 +200,7 @@ class Yolo_det(Node):
                     2  # Line thickness
                 )
         
-        print(self.counter, ' cars detected.')
+        print(self.counter, desired_class, ' detected.')
         if self.prev_nr_obj == self.counter:
             self.first_time = False
         else:
@@ -216,7 +218,7 @@ class Yolo_det(Node):
         #     self.destroy_node()
         if self.prev_nr_obj != 0:
             with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-                self.sam2_tracking(14, self.tracking_received_points, self.tracking_received_labels, copy_frame)
+                self.sam2_tracking(1, self.tracking_received_points, self.tracking_received_labels, copy_frame)
     
     # def get_pc(self, center_x, center_y):
     #     print('pc')
@@ -234,11 +236,14 @@ class Yolo_det(Node):
             )
             print('ending first time')
             self.first_time = False
+            print('::::::::::::::::', out_mask_logits)
             
         else:
             print('other times')
             # Track object in subsequent frames
             out_obj_ids, out_mask_logits = self.predictor.track(frame)
+
+            print('::::::::::::::::', out_mask_logits)
             
             # Convert logits to binary mask
             mask = (out_mask_logits[0] > 0).cpu().numpy().astype("uint8") * 255  # Binary mask, 2D
@@ -276,9 +281,9 @@ class Yolo_det(Node):
                 for point in obj:
                     coords.append([int(point[0][0]), int(point[0][1])])  # Store as [x, y]
                 polygons.append(coords)
+                print('POLYGONS: ', polygons)
                 # polygons.append(coords)
             
-            print('POLYGONS: ', polygons)
             
 
 def main(args=None):
