@@ -34,7 +34,7 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'cars.mp4'
+        video_name = 'bycicle.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
         # self.video_path = None  # Default to None for webcam
@@ -166,7 +166,7 @@ class Yolo_det(Node):
                 
                 
                 
-                if class_name == 'car':
+                if class_name == 'bicycle':
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
                     self.tracking_received_labels.append(1)
