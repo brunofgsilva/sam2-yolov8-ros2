@@ -1,1 +1,0 @@
-/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg/msg/DetectedObject.msg
