@@ -1,6 +1,0 @@
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/DetectedObject.idl
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/Yolov8Objects.idl
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/MaskDetection.idl
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/ListOfMaskDetections.idl
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/TrackingMask.idl
-/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_adapter/interfaces_pkg:msg/ListOfTrackingMasks.idl
