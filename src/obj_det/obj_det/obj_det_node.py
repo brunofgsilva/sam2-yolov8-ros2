@@ -33,6 +33,10 @@ class Yolo_det(Node):
         self.detected_objects_publisher = self.create_publisher(Yolov8Objects, 'objects_detected_filtered', 10)
         self.sam2_data_publisher = self.create_publisher(ListOfTrackingMasks, 'sam2_data_filtered', 10)
         
+        # Head
+        self.color_image_head_subscriber = self.create_subscription(Image, "/CHARMIE/D455_head/color/image_raw", self.get_color_image_head_callback, 10)
+        self.aligned_depth_image_head_subscriber = self.create_subscription(Image, "/CHARMIE/D455_head/aligned_depth_to_color/image_raw", self.get_aligned_depth_image_head_callback, 10)
+        
         self.object_model = YOLO('yolov8m.pt')
         print("Sucessfully imported YOLO model")
         
@@ -57,6 +61,11 @@ class Yolo_det(Node):
         self.tracking_received_points = []
         self.tracking_received_labels = []
         self.obj_ids = []
+        
+        # Point Cloud Instance
+        self.br = CvBridge()
+        self.head_rgb_img = Image()
+        self.head_depth_img = Image()
         
         if self.video_path:
             self.cap = cv2.VideoCapture(self.video_path)
@@ -84,6 +93,200 @@ class Yolo_det(Node):
         self.timer = self.create_timer(0.1, self.read_camera)
         self.get_logger().info('Video reader node initialized.')
         
+        
+        
+        
+        # PC INITIALISATION:
+        
+        self.linhas = 720
+        self.colunas = 1280
+        
+        # Parametros intrinsecos da Camera (Dados pelo Tiago)
+        
+        self.fx = 633.811950683593  # Distancia Focal em pixels (x-direction)
+        self.fy = 633.234680175781  # Distancia Focal em pixels (y-direction)
+        self.cx = 629.688598632812  # Ponto Principal em pixels (x-coordinate)
+        self.cy = 393.705749511718  # Ponto Principal em pixels (y-coordinate)
+        # maximum and minimum distnace considered, outside this range is 0
+        self.MAX_DIST = 6000
+        self.MIN_DIST = 300
+        
+        self.X_SHIFT = 0
+        self.Y_SHIFT = 0
+        self.Z_SHIFT = 650 # App value for camera height test
+    
+        self.teta = [  0,   0,   0] # neck values to adjust the kinematics
+
+        # self.rgb_img_pc = np.zeros((self.linhas, self.colunas,3), dtype=np.uint8)
+        self.depth_img_pc = np.zeros((self.linhas, self.colunas), dtype=np.uint8)
+
+        self.ESCALA = 16  # Por questões de eficiencia, só vamos considerar 1 pixel em cada 4
+
+        self.RECEBO = []
+        self.ENVIO = []
+
+        self.T = np.identity(4)
+        
+     
+    def get_color_image_head_callback(self, img: Image):
+        self.head_rgb_img = img
+        print("Received Head RGB Image")
+
+    def get_aligned_depth_image_head_callback(self, img: Image):
+        self.head_depth_img = img
+        # if self.ACTIVATE_HEAD_DEPTH_OBSTACLES:
+        #     self.publish_head_depth_obstacles()
+        print("Received Head Depth Image")  
+     
+     
+    ### PC CODE CHARMIE CALLBACK FOR MASKS:
+    def robo_head(self):
+        print('robo head - N sei o que fazer aqui')
+        # A4 = self.Trans(100, 11.5, 195)
+        # A3 = self.Rot('y', self.teta[1])
+        # A2 = self.Trans(30, 0, 25)
+        # A1 = self.Rot('z', self.teta[0])
+        # T = np.dot(A1, A2)
+        # T = np.dot(T, A3)
+        # T = np.dot(T, A4)
+        # self.T = T
+        
+    def converter_2D_3D_mask(self, depth_with_mask):
+        
+        # s = time.time()
+        non_zero_indices = np.nonzero(depth_with_mask)
+        non_zero_values = depth_with_mask[non_zero_indices] 
+        # print(non_zero_values)
+        final_coords = []
+
+        if non_zero_values.size:
+
+            depth = np.mean(non_zero_values)
+            u = np.mean(non_zero_indices[0])
+            v = np.mean(non_zero_indices[1])
+            # print("avg np:", depth, u, v)
+
+            Z = depth
+            X = (v - self.cx) * depth / self.fx
+            Y = (u - self.cy) * depth / self.fy
+
+            xn = Z
+            yn = -X
+            zn = -Y
+            result = np.dot(self.T, [xn, yn, zn, 1])
+            result[0] += self.X_SHIFT
+            result[1] += self.Y_SHIFT
+            result[2] += self.Z_SHIFT  # Z=0 is the floor
+
+            result = result[0:3].astype(np.int16)
+            final_coords = result.tolist()
+
+        else:   
+            # there are no elements on the non_zero_indices from the mask
+            final_coords = [0, 0, 0]         
+
+        # elapsed = time.time() - s
+        # print(elapsed)
+        return final_coords
+    
+    
+    
+    def point_cloud_mask(self, mask, depth_img, rgb_img): # passar na mask a lista de MaskDetection[] e na img a depth img
+
+        # print(request)
+
+        # Type of service received:
+        # MaskDetection[] data # detection segmentation mask 
+        # string camera # which camera is being used (head or hand camera)
+        # ---
+        # PointCloudCoordinates[] coords # returns the selected 3D points
+        
+        if depth_img.height > 0 and rgb_img.height > 0: # prevents doing this code before receiving images
+
+            # rgb_frame = self.br.imgmsg_to_cv2(self.head_rgb_img, "bgr8")
+            depth_frame = self.br.imgmsg_to_cv2(depth_img, desired_encoding="passthrough")
+            
+            width = rgb_img.width
+            height = rgb_img.height
+
+            depth_frame_res = cv2.resize(depth_frame, (width, height), interpolation = cv2.INTER_NEAREST)
+
+            depth_frame_res[depth_frame_res > self.MAX_DIST] = 0
+            depth_frame_res[depth_frame_res < self.MIN_DIST] = 0
+
+            # self.pcloud_head.rgb_img_pc = rgb_frame
+            self.depth_img_pc = depth_frame_res
+            self.RECEBO = []
+
+            # print(len(request.data))
+            for r in mask:
+                temp_mask = []
+                for p in r.point: # converts received mask into local coordinates and numpy array
+                    p_list = []
+                    p_list.append(int(p.x))
+                    p_list.append(int(p.y))
+                    
+                    temp_mask.append(p_list)
+
+                self.RECEBO.append(np.array(temp_mask))
+            # print(self.pcloud_head.RECEBO)
+
+            self.ENVIO = []
+            self.tempo_calculo = time.perf_counter()
+
+            self.robo_head()
+            for mask in self.RECEBO:
+                b_mask = np.zeros(depth_frame_res.shape[:2], np.uint8) # creates new empty window
+                contour = mask
+                contour = contour.astype(np.int32)
+                contour = contour.reshape(-1, 1, 2)
+                cv2.drawContours(b_mask, [contour], -1, (255, 255, 255), cv2.FILLED) # creates mask window with just the inside pixesl of the detected objects
+                depth_frame_res_mask = depth_frame_res.copy()
+                depth_frame_res_mask[b_mask == 0] = [0]
+                self.ENVIO.append(self.converter_2D_3D_mask(depth_frame_res_mask))
+
+            print(self.ENVIO)
+
+            # cv2.imshow("mask", b_mask)
+            # cv2.imshow("test depth", depth_frame_res_mask)
+            # cv2.waitKey(10)
+
+            # convert ENVIO into GetPointCloudMask.Response()
+            ret = []
+            if len(self.ENVIO) > 0:
+                for cc in self.ENVIO:
+                    
+                    # print(cc)
+                    pcc = PointCloudCoordinates()
+
+                    point_c = Point()
+                    point_c.x = float(cc[0])
+                    point_c.y = float(cc[1])
+                    point_c.z = float(cc[2])
+
+                    pcc.center_coords = point_c
+
+                    ret.append(pcc)
+
+            print(ret)
+            # response.coords = ret
+            # imprime os tempos de processamento e da frame
+            self.get_logger().info(f"Point Cloud Time (Head Mask): {time.perf_counter() - self.tempo_calculo}")
+
+        else:
+            # this prevents an error that sometimes on a low computational power PC that the rgb image arrives at yolo node 
+            # but the depth has not yet arrived. This is a rare bug, but it crashes the yolos nodes being used.
+            self.get_logger().error(f"Depth Image was not received. Please restart...")
+            ret = []
+        
+        # print(response)
+        return ret
+    
+    
+    
+    
+    
+    
         
     def read_camera(self):
         ret, frame = self.cap.read()
@@ -343,11 +546,14 @@ class Yolo_det(Node):
                 # msg.binary_mask = self.node.br.cv2_to_imgmsg(white_mask, encoding='mono8')
                 msg.mask = list_masks
                 print('-')
+                print(requested_objects)
                 # AQUI DEVO PUBLICAR NO TÓPICO 
 
                 msg_list.list_of_masks.append(msg)
 
                 # self.sam2_data_publisher.publish(msg)
+                
+                self.get_pc(requested_objects)
 
             else:
                 print('=')
@@ -543,9 +749,13 @@ class Yolo_det(Node):
           
           
           
-    def get_pc(self, mask, img, centroid):
+    def get_pc(self, mask):
         print('inside PC')
-        
+        if self.head_depth_img.height > 0 and self.head_rgb_img.height > 0: # prevents doing this code before receiving images
+            self.point_cloud_mask(mask, self.head_depth_img, self.head_rgb_img)
+            
+            # Tenho de explorar bem o que retorna agora este point cloud mask
+    
 
 def main(args=None):
     rclpy.init(args=args)
