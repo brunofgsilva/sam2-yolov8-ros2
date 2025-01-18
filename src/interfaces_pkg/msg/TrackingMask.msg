@@ -1,5 +1,8 @@
 # SAM2 Tracking activated information
 
+string obj_name       	       # name of the object
+int32 object_id		       # nr of the object
+
 geometry_msgs/Point centroid   # pixel centroid coordinates
 ListOfMaskDetections mask      # mask of the tracking selection
 

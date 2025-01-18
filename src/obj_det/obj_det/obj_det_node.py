@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
-from interfaces_pkg.msg import DetectedObject, Yolov8Objects, MaskDetection, ListOfMaskDetections, TrackingMask
+from interfaces_pkg.msg import DetectedObject, Yolov8Objects, MaskDetection, ListOfMaskDetections, TrackingMask, ListOfTrackingMasks
 
 from cv_bridge import CvBridge
 import cv2
@@ -31,7 +31,7 @@ class Yolo_det(Node):
         
         # Publish Results
         self.detected_objects_publisher = self.create_publisher(Yolov8Objects, 'objects_detected_filtered', 10)
-        self.sam2_data_publisher = self.create_publisher(TrackingMask, 'sam2_data_filtered', 10)
+        self.sam2_data_publisher = self.create_publisher(ListOfTrackingMasks, 'sam2_data_filtered', 10)
         
         self.object_model = YOLO('yolov8m.pt')
         print("Sucessfully imported YOLO model")
@@ -39,10 +39,10 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'birds.mp4'
+        video_name = 'bicycles.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
-        self.video_path = None  # Default to None for webcam
+        # self.video_path = None  # Default to None for webcam
         
         
         # Define model and configurations
@@ -97,7 +97,8 @@ class Yolo_det(Node):
         # Resize the frame to match webcam resolution (e.g., 640x480)
         desired_width = 640
         desired_height = 480
-        frame = cv2.resize(frame, (desired_width, desired_height))
+        if frame.shape[:2] != (desired_height, desired_width):
+            frame = cv2.resize(frame, (desired_width, desired_height))
 
         # Process the frame (e.g., display it or perform operations)
         self.get_logger().info('Frame captured successfully.')
@@ -132,7 +133,7 @@ class Yolo_det(Node):
         self.tracking_received_labels.clear()
         self.obj_ids.clear()
 
-        desired_class = 'bottle'
+        self.desired_class = 'bicycle'
         
         
         for object_idx in range(num_obj):
@@ -176,7 +177,7 @@ class Yolo_det(Node):
                 print('Width: ', box_width, 'Height', box_height)
                 print('Center :', center_x,', ', center_y)       
                 
-                if class_name == desired_class:
+                if class_name == self.desired_class:
                     self.counter += 1
                     self.tracking_received_points.append((center_x, center_y))
                     self.tracking_received_labels.append(1)
@@ -209,7 +210,7 @@ class Yolo_det(Node):
                     2  # Line thickness
                 )
         
-        print(self.counter, desired_class, ' detected.')
+        print(self.counter, self.desired_class, ' detected.')
         if self.prev_nr_obj == self.counter:
             self.first_time = False
         else:
@@ -221,13 +222,13 @@ class Yolo_det(Node):
         print('---------------------')
             
         # Display the annotated frame
-        # cv2.imshow("YOLO Detection", current_frame)
-        # if cv2.waitKey(1) & 0xFF == ord('q'):
-        #     self.get_logger().info('Exiting...')
-        #     self.destroy_node()
+        cv2.imshow("YOLO Detection", current_frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            self.get_logger().info('Exiting...')
+            self.destroy_node()
         if self.prev_nr_obj != 0:
             with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-                self.sam2_tracking(self.obj_ids, self.tracking_received_points, self.tracking_received_labels, copy_frame)
+                self.sam2_tracking(self.obj_ids, self.tracking_received_points, self.tracking_received_labels, copy_frame, self.prev_nr_obj)
     
     # def get_pc(self, center_x, center_y):
     #     print('pc')
@@ -302,7 +303,7 @@ class Yolo_det(Node):
 
 
 
-    def filter_and_publish_tracking_data(self, polygons, binary_mask):
+    def filter_and_publish_tracking_data(self, polygons, binary_mask, msg_list):
 
         MIN_AREA_FOR_PC_CALCULATION = 4000
 
@@ -313,7 +314,10 @@ class Yolo_det(Node):
             if centroid is not None:
                 print('.')
                 
+                
                 msg = TrackingMask()
+                msg.object_id = self.counter_msg
+                msg.obj_name = self.desired_class
                 msg.centroid.x = float(centroid[0])
                 msg.centroid.y = float(centroid[1])
                 print('.')
@@ -341,16 +345,19 @@ class Yolo_det(Node):
                 print('-')
                 # AQUI DEVO PUBLICAR NO TÓPICO 
 
-                self.sam2_data_publisher.publish(msg)
+                msg_list.list_of_masks.append(msg)
+
+                # self.sam2_data_publisher.publish(msg)
 
             else:
                 print('=')
+                msg_list = []
 
-            return centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon
+            return centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon, msg_list
         else:
             print('else')
 
-    def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels, frame):
+    def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels, frame, nr_objects_detected):
         print('sam2_tracking')
         
         # Step 1: Set the image for the predictor
@@ -359,13 +366,7 @@ class Yolo_det(Node):
         image_batch = [frame]  # List of images (can be multiple frames in your case)
 
         # Set the image batch for the predictor
-        self.predictor.set_image_batch(image_batch)
-
-        # Step 2: Predict masks for the given points and labels
-        
-
-        print(tracking_received_points, tracking_received_labels)
-        
+        self.predictor.set_image_batch(image_batch)            
 
         print('......................')
 
@@ -383,28 +384,13 @@ class Yolo_det(Node):
         print("pts_batch:", pts_batch)
         print("labels_batch:", labels_batch)
 
-
         print('......................')
 
-        # image1_pts = np.array([
-        #     [[500, 375]],
-        #     [[650, 750]], 
-        #     [[200, 200]]
-        #     ]) # Bx1x2 where B corresponds to number of objects 
-        # image1_labels = np.array([[1], [1], [1]])
+        # print("pts_batch:", pts_batch)
+        # print("labels_batch:", labels_batch)
+        # print("Frame shape:", frame.shape)
 
-        # pts_batch = [image1_pts]
-        # labels_batch = [image1_labels]
-
-        # Now structure the points and labels into batches (for one image)
-        # pts_batch = [points_array]  # One image in the batch
-        # labels_batch = [labels_array]  # One set of labels in the batch
-
-        print("pts_batch:", pts_batch)
-        print("labels_batch:", labels_batch)
-        print("Frame shape:", frame.shape)
-
-        print('-')
+        # print('-')
 
         # Run the predictor to get the masks and scores
         masks_batch, scores_batch, _ = self.predictor.predict_batch(pts_batch, labels_batch, box_batch=None, multimask_output=True)
@@ -421,9 +407,18 @@ class Yolo_det(Node):
         # Process each mask and display them all together on the image
         combined_mask = None  # Initialize a combined mask
 
+        list_of_objects = []
+
         for masks in best_masks:
             print('nr de mascaras: ', len(masks))
             polygons = []
+            # Initialize combined images
+            combined_white_mask = np.zeros_like(frame[:, :, 0], dtype=np.uint8)  # Single-channel for binary mask
+            combined_teste = frame.copy()  # To draw polygons and centroids
+            combined_frame_with_mask = frame.copy()  # To overlay masks
+            accumulated_frame_with_mask = np.zeros_like(frame)  # Same shape as the frame, initialized to black
+            msg_list = ListOfTrackingMasks()
+            self.counter_msg = 0
             for mask in masks:
                 print('MASK: ', mask)
 
@@ -434,9 +429,6 @@ class Yolo_det(Node):
                 for obj in contours:
                     coords = []
                         
-                    # for point in obj:
-                    #     coords.append(int(point[0][0]))
-                    #     coords.append(int(point[0][1]))
                     for point in obj:
                         coords.append([int(point[0][0]), int(point[0][1])])  # Store as [x, y]
                     polygons.append(coords)
@@ -448,9 +440,37 @@ class Yolo_det(Node):
                     print('no polygon detected')
                 
                 else:
-                    centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon = self.filter_and_publish_tracking_data(polygons, mask_binary)
+                    self.counter_msg += 1
+                    centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon, list_of_objects = self.filter_and_publish_tracking_data(polygons, mask_binary, msg_list)
                     print('binary mask used: ', mask_binary)
                     print('Returned: ', centroid)
+
+                    # Add current binary mask to the combined one
+                    combined_white_mask = cv2.bitwise_or(combined_white_mask, mask_binary)
+
+                    # # Overlay the binary mask on the frame for visualization
+                    # white_mask_overlay = cv2.bitwise_and(frame, frame, mask=mask_binary)
+                    # combined_frame_with_mask = cv2.addWeighted(combined_frame_with_mask, 1.0, white_mask_overlay, 0.5, 0)
+                    # Create the individual frame_with_mask for this specific mask
+                    # Apply the mask to the frame
+                    individual_frame_with_mask = cv2.bitwise_and(frame, frame, mask=mask_binary)
+
+                    # Accumulate the result
+                    accumulated_frame_with_mask = cv2.add(accumulated_frame_with_mask, individual_frame_with_mask)
+
+                    if updated_filtered_polygons:
+                        for p in updated_filtered_polygons:
+                            cv2.polylines(combined_teste, [np.array(p, dtype=np.int32)], True, (0, 255, 255), 5)
+                            cv2.fillPoly(combined_teste, [np.array(p, dtype=np.int32)], (0, 100, 100))
+                        if centroid is not None:
+                            cv2.circle(combined_teste, (int(centroid[0]), int(centroid[1])), 5, (0, 0, 255), -1)
+                            for p, a in zip(centroid_each_polygon, area_each_polygon):
+                                cv2.circle(combined_teste, (int(p[0]), int(p[1])), 5, (255, 0, 0), -1)
+                                cv2.putText(combined_teste, f'A:{int(a)}', (int(p[0]), int(p[1])), 
+                                            cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 255), 1, cv2.LINE_AA)
+
+                    # cv2.imshow("Frame with Mask BW", white_mask)
+                    # cv2.imshow("Test Polygon", teste)
 
 
                 # Combine all masks into one array
@@ -458,6 +478,29 @@ class Yolo_det(Node):
                     combined_mask = mask_binary  # Initialize the combined mask
                 else:
                     combined_mask = np.logical_or(combined_mask, mask_binary)  # Combine masks using logical OR
+            msg_list.nr_of_objects_detected = nr_objects_detected
+        
+        if list_of_objects != []:
+            self.sam2_data_publisher.publish(list_of_objects)     
+        # Text to display
+        text = f"{nr_objects_detected} {self.desired_class} detected"
+
+        # Font settings
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        font_scale = 1
+        color = (255, 255, 255)  # White text
+        thickness = 2
+        position = (10, 30)  # Top-left corner (x, y)
+
+        # Write text on each frame
+        cv2.putText(combined_white_mask, text, position, font, font_scale, color, thickness)
+        cv2.putText(combined_teste, text, position, font, font_scale, color, thickness)
+        cv2.putText(accumulated_frame_with_mask, text, position, font, font_scale, color, thickness)
+
+        # Display accumulated results after the loop
+        cv2.imshow("Combined White Mask", combined_white_mask)
+        cv2.imshow("Combined Test Polygon", combined_teste)
+        cv2.imshow("Combined Frame with Mask", accumulated_frame_with_mask)
 
         if combined_mask is not None:
             # Convert the combined mask to a binary image (0 or 255)
@@ -469,6 +512,10 @@ class Yolo_det(Node):
             
             # Overlay the green mask onto the original frame
             combined_image = cv2.addWeighted(frame, 1.0, green_mask, 0.5, 0)
+
+            # Write text on each frame
+            cv2.putText(combined_image, text, position, font, font_scale, color, thickness)
+
             
             # Show the combined image
             cv2.imshow("All Object Masks", combined_image)
@@ -476,28 +523,15 @@ class Yolo_det(Node):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 self.get_logger().info('Exiting...')
                 self.destroy_node()
-        
 
-        # centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon = self.filter_and_publish_tracking_data(polygons, green_mask)
-        
-        print('Tracking complete.')
-
+            # Show the combined image
+            cv2.imshow("Original frame", frame)
+            # cv2.waitKey(0)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                self.get_logger().info('Exiting...')
+                self.destroy_node()
                 
-            # #Start analysing data from contours  
-            # contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-            # polygons = []
-            # for obj in contours:
-            #     coords = []
-                    
-            #     # for point in obj:
-            #     #     coords.append(int(point[0][0]))
-            #     #     coords.append(int(point[0][1]))
-            #     for point in obj:
-            #         coords.append([int(point[0][0]), int(point[0][1])])  # Store as [x, y]
-            #     polygons.append(coords)
-            #     print('POLYGONS: ', polygons)
-            #     # polygons.append(coords)
-            
+        print('Tracking complete.')
             
 
 def main(args=None):

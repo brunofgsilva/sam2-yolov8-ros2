@@ -29,8 +29,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MaskDetection.msg"
   "msg/ListOfMaskDetections.msg"
   "msg/TrackingMask.msg"
+  "msg/ListOfTrackingMasks.msg"
 
-  DEPENDENCIES example_interfaces geometry_msgs sensor_msgs
+  DEPENDENCIES example_interfaces geometry_msgs sensor_msgs std_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
