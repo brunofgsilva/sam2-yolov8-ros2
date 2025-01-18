@@ -91,7 +91,7 @@ class Yolo_det(Node):
             self.get_logger().warning('Failed to read frame from webcam.')
             elapsed_time = time.time() - self.start_time
             self.get_logger().info(f"Time to read the video: {elapsed_time:.4f} seconds")
-            # self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  # Restart video if it ends
+            self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  # Restart video if it ends
             return
         
         # Resize the frame to match webcam resolution (e.g., 640x480)
@@ -445,6 +445,14 @@ class Yolo_det(Node):
                     print('binary mask used: ', mask_binary)
                     print('Returned: ', centroid)
 
+                    if mask_binary is None or mask_binary.size == 0:
+                        print("Warning: mask_binary is empty or None.")
+                        continue
+                    
+                    # Ensure shapes match before applying bitwise_or
+                    if combined_white_mask.shape != mask_binary.shape:
+                        print("Error: Shapes of combined_white_mask and mask_binary do not match.")
+                        break
                     # Add current binary mask to the combined one
                     combined_white_mask = cv2.bitwise_or(combined_white_mask, mask_binary)
 
