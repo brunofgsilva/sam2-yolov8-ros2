@@ -1,0 +1,3 @@
+[console_scripts]
+obj_det_node = obj_det.obj_det_node:main
+

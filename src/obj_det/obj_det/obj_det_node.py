@@ -41,12 +41,12 @@ class Yolo_det(Node):
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
         video_name = 'bicycles.mp4'
         
-        self.video_path = self.home + '/' + midpath_videos + '/' + video_name
-        # self.video_path = None  # Default to None for webcam
+        # self.video_path = self.home + '/' + midpath_videos + '/' + video_name
+        self.video_path = None  # Default to None for webcam
         
         
         # Define model and configurations
-        sam2_checkpoint = self.home+"/Bruno/sam2/checkpoints/sam2.1_hiera_small.pt"
+        sam2_checkpoint = self.home+"/sam2/checkpoints/sam2.1_hiera_small.pt"
         model_cfg = "configs/sam2.1/sam2.1_hiera_s.yaml"
         # self.predictor = build_sam2_camera_predictor(model_cfg, sam2_checkpoint)
         self.sam2_model = build_sam2(model_cfg, sam2_checkpoint)
@@ -82,6 +82,9 @@ class Yolo_det(Node):
         self.start_time = time.time()
         
         self.timer = self.create_timer(0.1, self.read_camera)
+        
+        self.prev_frame_time = time.time() # used to record the time when we processed last frame
+        self.new_frame_time = time.time() # used to record the time at which we processed current frame
         self.get_logger().info('Video reader node initialized.')
         
         
@@ -113,6 +116,7 @@ class Yolo_det(Node):
         # print(camera)
         # print(current_frame)
         copy_frame = current_frame.copy()
+        self.start_time = time.time()
         object_results = model.track(current_frame, persist=True, tracker="bytetrack.yaml")
         num_obj = len(object_results[0])
         print('---------------------')
@@ -133,7 +137,8 @@ class Yolo_det(Node):
         self.tracking_received_labels.clear()
         self.obj_ids.clear()
 
-        self.desired_class = 'bicycle'
+        # self.desired_class = 'cell phone'
+        self.desired_class = 'banana'
         
         
         for object_idx in range(num_obj):
@@ -143,7 +148,7 @@ class Yolo_det(Node):
             boxes_id = object_results[0].boxes[object_idx]
             object_confidence = boxes_id.conf[0].item()
             
-            if object_confidence > 0.2:
+            if object_confidence > 0.5:
                 num_obj_filtered += 1
                 box_top_left_x = int(boxes_id.xyxy[0][0])
                 box_top_left_y = int(boxes_id.xyxy[0][1])
@@ -396,6 +401,11 @@ class Yolo_det(Node):
         masks_batch, scores_batch, _ = self.predictor.predict_batch(pts_batch, labels_batch, box_batch=None, multimask_output=True)
 
         print('-')
+        print(len(masks_batch), len(scores_batch))
+        print(masks_batch, scores_batch)
+        
+        # if len(masks_batch) == 1:  # Check for single-object detection
+        #     masks_batch = [masks_batch]  # Wrap in a list to match multi-object structure
         
         # Select the best mask for each object based on the highest score
         best_masks = []
@@ -420,13 +430,35 @@ class Yolo_det(Node):
             msg_list = ListOfTrackingMasks()
             self.counter_msg = 0
             for mask in masks:
-                print('MASK: ', mask)
+                # print('MASK: ', mask)
 
                 # Convert the mask to a binary image (0 or 255)
+                
+                print(f"Processing mask with shape {mask.shape}")
+                print(f"Processing mask with size {mask.size}")
+                
+                # if mask.size == 640:
+                #     print("Expanding single-object mask to (480, 640).")
+                #     expanded_mask = np.zeros((480, 640), dtype=mask.dtype)
+                #     expanded_mask[:mask.size // 640, :640] = mask.reshape((-1, 640))  # Stretch to expected dimensions
+                #     mask = expanded_mask
+
+                # # Validate and normalize the mask
+                # if mask.ndim != 2:
+                #     raise ValueError(f"Unexpected mask format: shape={mask.shape}")
+                
+                print('nr de mask', len(mask))
                 mask_binary = (mask * 255).astype(np.uint8)  # This makes it a binary mask (0 and 255)
+                
+                print('size binary mask:', len(mask_binary))
 
                 contours, _ = cv2.findContours(mask_binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+                
+                # print('Contours:', contours)
+                print('Tamanho contours', len(contours))
                 for obj in contours:
+                    # print('nr de contours', len(contours))
+                    # print('nr de obj', len(obj))
                     coords = []
                         
                     for point in obj:
@@ -531,6 +563,14 @@ class Yolo_det(Node):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 self.get_logger().info('Exiting...')
                 self.destroy_node()
+                
+            # Display the result
+            # cv2.imshow("Segmented Object", overlay)
+            self.new_frame_time = time.time()
+            self.fps = round(1/(self.new_frame_time-self.prev_frame_time), 2)
+            self.prev_frame_time = self.new_frame_time
+            self.fps = str(self.fps)
+            print("fps:", self.fps)
 
             # Show the combined image
             cv2.imshow("Original frame", frame)

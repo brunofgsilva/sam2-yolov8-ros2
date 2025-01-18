@@ -1,0 +1,19 @@
+[1.013s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build --no-deps symlink_data
+[1.443s] running develop
+[1.444s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[1.444s]   warnings.warn(
+[1.768s] running egg_info
+[1.769s] writing obj_det.egg-info/PKG-INFO
+[1.769s] writing dependency_links to obj_det.egg-info/dependency_links.txt
+[1.769s] writing entry points to obj_det.egg-info/entry_points.txt
+[1.769s] writing requirements to obj_det.egg-info/requires.txt
+[1.769s] writing top-level names to obj_det.egg-info/top_level.txt
+[1.771s] reading manifest file 'obj_det.egg-info/SOURCES.txt'
+[1.772s] writing manifest file 'obj_det.egg-info/SOURCES.txt'
+[1.825s] running build_ext
+[1.825s] Creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj-det.egg-link (link to .)
+[1.826s] Installing obj_det_node script to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+[1.826s] 
+[1.826s] Installed /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det
+[1.826s] running symlink_data
+[1.867s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det' returned '0': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build --no-deps symlink_data

@@ -1,0 +1,1 @@
+/home/bruno/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/list_of_tracking_masks__rosidl_typesupport_introspection_cpp.hpp

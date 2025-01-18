@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+obj_det/__init__.py
+obj_det/obj_det_node.py
+obj_det.egg-info/PKG-INFO
+obj_det.egg-info/SOURCES.txt
+obj_det.egg-info/dependency_links.txt
+obj_det.egg-info/entry_points.txt
+obj_det.egg-info/requires.txt
+obj_det.egg-info/top_level.txt
+obj_det.egg-info/zip-safe
+resource/obj_det
