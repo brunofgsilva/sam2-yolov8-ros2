@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing obj_det.egg-info/PKG-INFO
+writing dependency_links to obj_det.egg-info/dependency_links.txt
+writing entry points to obj_det.egg-info/entry_points.txt
+writing requirements to obj_det.egg-info/requires.txt
+writing top-level names to obj_det.egg-info/top_level.txt
+reading manifest file 'obj_det.egg-info/SOURCES.txt'
+writing manifest file 'obj_det.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj-det.egg-link (link to .)
+Installing obj_det_node script to /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+
+Installed /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det
+running symlink_data

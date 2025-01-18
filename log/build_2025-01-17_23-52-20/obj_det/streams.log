@@ -1,0 +1,24 @@
+[0.884s] Invoking command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det': PYTHONPATH=/home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/build --no-deps symlink_data
+[1.240s] running develop
+[1.506s] running egg_info
+[1.506s] creating obj_det.egg-info
+[1.506s] writing obj_det.egg-info/PKG-INFO
+[1.507s] writing dependency_links to obj_det.egg-info/dependency_links.txt
+[1.507s] writing entry points to obj_det.egg-info/entry_points.txt
+[1.507s] writing requirements to obj_det.egg-info/requires.txt
+[1.507s] writing top-level names to obj_det.egg-info/top_level.txt
+[1.507s] writing manifest file 'obj_det.egg-info/SOURCES.txt'
+[1.509s] reading manifest file 'obj_det.egg-info/SOURCES.txt'
+[1.509s] writing manifest file 'obj_det.egg-info/SOURCES.txt'
+[1.543s] running build_ext
+[1.543s] Creating /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj-det.egg-link (link to .)
+[1.543s] Installing obj_det_node script to /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+[1.544s] 
+[1.544s] Installed /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det
+[1.544s] running symlink_data
+[1.544s] creating /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index
+[1.544s] creating /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index
+[1.544s] creating /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index/packages
+[1.544s] symbolically linking /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/resource/obj_det -> /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index/packages
+[1.545s] symbolically linking /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/package.xml -> /home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det
+[1.574s] Invoked command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det' returned '0': PYTHONPATH=/home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/charmie/umib_sam2_yolov8_ros2_ws/build/obj_det/build --no-deps symlink_data

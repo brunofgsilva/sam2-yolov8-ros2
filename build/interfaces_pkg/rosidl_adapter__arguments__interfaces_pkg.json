@@ -1,0 +1,10 @@
+{
+  "package_name": "interfaces_pkg",
+  "non_idl_tuples": [
+    "/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/DetectedObject.msg",
+    "/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/Yolov8Objects.msg",
+    "/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/MaskDetection.msg",
+    "/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/ListOfMaskDetections.msg",
+    "/home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg:msg/TrackingMask.msg"
+  ]
+}

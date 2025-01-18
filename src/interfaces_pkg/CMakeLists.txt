@@ -26,6 +26,9 @@ find_package(sensor_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/DetectedObject.msg"
   "msg/Yolov8Objects.msg"
+  "msg/MaskDetection.msg"
+  "msg/ListOfMaskDetections.msg"
+  "msg/TrackingMask.msg"
 
   DEPENDENCIES example_interfaces geometry_msgs sensor_msgs
 )

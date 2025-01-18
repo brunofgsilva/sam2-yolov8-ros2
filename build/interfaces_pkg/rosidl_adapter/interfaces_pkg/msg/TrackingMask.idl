@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces_pkg/msg/TrackingMask.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+#include "interfaces_pkg/msg/ListOfMaskDetections.idl"
+
+module interfaces_pkg {
+  module msg {
+    @verbatim (language="comment", text=
+      "SAM2 Tracking activated information")
+    struct TrackingMask {
+      @verbatim (language="comment", text=
+        "pixel centroid coordinates")
+      geometry_msgs::msg::Point centroid;
+
+      @verbatim (language="comment", text=
+        "mask of the tracking selection")
+      interfaces_pkg::msg::ListOfMaskDetections mask;
+
+      @verbatim (language="comment", text=
+        "position relative to the robot frame")
+      geometry_msgs::msg::Point position_relative;
+
+      @verbatim (language="comment", text=
+        "position relative to the map frame")
+      geometry_msgs::msg::Point position_absolute;
+    };
+  };
+};

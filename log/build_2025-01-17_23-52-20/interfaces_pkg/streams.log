@@ -1,0 +1,224 @@
+[0.012s] Invoking command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[0.071s] -- The C compiler identification is GNU 11.4.0
+[0.120s] -- The CXX compiler identification is GNU 11.4.0
+[0.127s] -- Detecting C compiler ABI info
+[0.195s] -- Detecting C compiler ABI info - done
+[0.200s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.200s] -- Detecting C compile features
+[0.201s] -- Detecting C compile features - done
+[0.203s] -- Detecting CXX compiler ABI info
+[0.279s] -- Detecting CXX compiler ABI info - done
+[0.284s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.284s] -- Detecting CXX compile features
+[0.285s] -- Detecting CXX compile features - done
+[0.294s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.575s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.659s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.751s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.763s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.783s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.870s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.931s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.998s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.028s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.469s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.894s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.433s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.478s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.484s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.533s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.533s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.533s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.533s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.577s] -- Found PythonExtra: .so  
+[2.721s] -- Configuring done
+[2.757s] -- Generating done
+[2.760s] -- Build files have been written to: /home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[2.768s] Invoked command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake /home/charmie/umib_sam2_yolov8_ros2_ws/src/interfaces_pkg -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg
+[2.770s] Invoking command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j16 -l16
+[2.811s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.822s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.831s] [  5%] Built target ament_cmake_python_symlink_interfaces_pkg
+[3.113s] [  5%] Built target interfaces_pkg__cpp
+[3.115s] [  7%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/yolov8_objects__functions.c.o[0m
+[3.115s] [ 10%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_c.dir/rosidl_generator_c/interfaces_pkg/msg/detail/detected_object__functions.c.o[0m
+[3.125s] [ 15%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.125s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.126s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.176s] [ 20%] [32m[1mLinking C shared library libinterfaces_pkg__rosidl_generator_c.so[0m
+[3.190s] running egg_info
+[3.191s] creating interfaces_pkg.egg-info
+[3.191s] writing interfaces_pkg.egg-info/PKG-INFO
+[3.191s] writing dependency_links to interfaces_pkg.egg-info/dependency_links.txt
+[3.191s] writing top-level names to interfaces_pkg.egg-info/top_level.txt
+[3.191s] writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[3.193s] reading manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[3.194s] writing manifest file 'interfaces_pkg.egg-info/SOURCES.txt'
+[3.218s] [ 20%] Built target interfaces_pkg__rosidl_generator_c
+[3.224s] [ 20%] Built target ament_cmake_python_build_interfaces_pkg_egg
+[3.230s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.230s] [ 28%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.230s] [ 28%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.400s] [ 33%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/yolov8_objects__type_support.cpp.o[0m
+[3.400s] [ 33%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces_pkg/msg/detected_object__type_support.cpp.o[0m
+[3.413s] [ 35%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/detected_object__type_support.cpp.o[0m
+[3.413s] [ 38%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces_pkg/msg/detail/yolov8_objects__type_support.cpp.o[0m
+[3.432s] [ 41%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/detected_object__type_support.cpp.o[0m
+[3.432s] [ 43%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces_pkg/msg/detail/dds_fastrtps/yolov8_objects__type_support.cpp.o[0m
+[3.517s] [ 46%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/yolov8_objects__type_support.cpp.o[0m
+[3.517s] [ 48%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces_pkg/msg/detected_object__type_support.cpp.o[0m
+[3.545s] [ 51%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/detected_object__type_support.c.o[0m
+[3.549s] [ 53%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces_pkg/msg/detail/yolov8_objects__type_support.c.o[0m
+[3.554s] [ 56%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_c.so[0m
+[3.594s] [ 58%] [32m[1mLinking C shared library libinterfaces_pkg__rosidl_typesupport_introspection_c.so[0m
+[3.604s] [ 58%] Built target interfaces_pkg__rosidl_typesupport_c
+[3.624s] [ 64%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/detected_object__type_support_c.cpp.o[0m
+[3.624s] [ 64%] [32mBuilding CXX object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces_pkg/msg/detail/yolov8_objects__type_support_c.cpp.o[0m
+[3.635s] [ 64%] Built target interfaces_pkg__rosidl_typesupport_introspection_c
+[3.695s] [ 66%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_cpp.so[0m
+[3.745s] [ 66%] Built target interfaces_pkg__rosidl_typesupport_cpp
+[3.868s] [ 69%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.877s] [ 71%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so[0m
+[3.942s] [ 74%] [32m[1mLinking CXX shared library libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so[0m
+[3.948s] [ 74%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_cpp
+[3.957s] [ 74%] Built target interfaces_pkg__rosidl_typesupport_introspection_cpp
+[4.012s] [ 74%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c
+[4.034s] [ 74%] Built target interfaces_pkg
+[4.058s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.421s] [ 76%] Built target interfaces_pkg__py
+[4.443s] [ 82%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_yolov8_objects_s.c.o[0m
+[4.443s] [ 82%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_generator_py.dir/rosidl_generator_py/interfaces_pkg/msg/_detected_object_s.c.o[0m
+[4.546s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so[0m
+[4.590s] [ 84%] Built target interfaces_pkg__rosidl_generator_py
+[4.612s] [ 92%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.612s] [ 92%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c.o[0m
+[4.612s] [ 92%] [32mBuilding C object CMakeFiles/interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.704s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.704s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.704s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.752s] [100%] Built target interfaces_pkg__rosidl_typesupport_fastrtps_c__pyext
+[4.752s] [100%] Built target interfaces_pkg__rosidl_typesupport_introspection_c__pyext
+[4.752s] [100%] Built target interfaces_pkg__rosidl_typesupport_c__pyext
+[4.764s] Invoked command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --build /home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg -- -j16 -l16
+[4.882s] Invoking command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg
+[4.889s] -- Install configuration: ""
+[4.889s] -- Execute custom install script
+[4.889s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/rosidl_interfaces/interfaces_pkg
+[4.899s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__functions.h
+[4.907s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__struct.h
+[4.916s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__type_support.h
+[4.924s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__functions.h
+[4.933s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__struct.h
+[4.942s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__type_support.h
+[4.950s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detected_object.h
+[4.960s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_generator_c__visibility_control.h
+[4.969s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/yolov8_objects.h
+[4.977s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.sh
+[4.986s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/library_path.dsv
+[4.995s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_fastrtps_c.h
+[5.003s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_fastrtps_c.h
+[5.012s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[5.021s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_introspection_c.h
+[5.029s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_introspection_c.h
+[5.039s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.048s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__builder.hpp
+[5.056s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__struct.hpp
+[5.065s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__traits.hpp
+[5.073s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__builder.hpp
+[5.082s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__struct.hpp
+[5.090s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__traits.hpp
+[5.098s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detected_object.hpp
+[5.106s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/yolov8_objects.hpp
+[5.115s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_fastrtps_cpp.hpp
+[5.123s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_fastrtps_cpp.hpp
+[5.132s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.142s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/detected_object__rosidl_typesupport_introspection_cpp.hpp
+[5.151s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/include/interfaces_pkg/interfaces_pkg/msg/detail/yolov8_objects__rosidl_typesupport_introspection_cpp.hpp
+[5.160s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.sh
+[5.169s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/pythonpath.dsv
+[5.177s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/PKG-INFO
+[5.186s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/SOURCES.txt
+[5.194s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/dependency_links.txt
+[5.202s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg-0.0.0-py3.10.egg-info/top_level.txt
+[5.211s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py
+[5.220s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_c.c
+[5.228s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.237s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/_interfaces_pkg_s.ep.rosidl_typesupport_introspection_c.c
+[5.246s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.254s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.263s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.272s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/libinterfaces_pkg__rosidl_generator_py.so
+[5.281s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py
+[5.289s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object.py
+[5.297s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object_s.c
+[5.306s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects.py
+[5.315s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects_s.c
+[5.324s] -- Up-to-date symlink: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.324s] -- Up-to-date symlink: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.325s] -- Up-to-date symlink: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/interfaces_pkg_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.325s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectedObject.idl
+[5.333s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Yolov8Objects.idl
+[5.343s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/DetectedObject.msg
+[5.352s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/msg/Yolov8Objects.msg
+[5.361s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/package_run_dependencies/interfaces_pkg
+[5.370s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/parent_prefix_path/interfaces_pkg
+[5.378s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.sh
+[5.387s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/ament_prefix_path.dsv
+[5.396s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.sh
+[5.405s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/environment/path.dsv
+[5.414s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.bash
+[5.422s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.sh
+[5.431s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.zsh
+[5.440s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/local_setup.dsv
+[5.449s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.dsv
+[5.458s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/ament_index/resource_index/packages/interfaces_pkg
+[5.466s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake-extras.cmake
+[5.475s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.483s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.492s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_libraries-extras.cmake
+[5.500s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/ament_cmake_export_targets-extras.cmake
+[5.509s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.517s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.526s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig.cmake
+[5.534s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkgConfig-version.cmake
+[5.544s] -- Symlinking: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/package.xml
+[5.553s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so
+[5.554s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_c.so" to ""
+[5.554s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so
+[5.554s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_c.so" to ""
+[5.554s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so
+[5.555s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_c.so" to ""
+[5.555s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so
+[5.555s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_c.so" to ""
+[5.555s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so
+[5.556s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.556s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so
+[5.556s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_introspection_cpp.so" to ""
+[5.556s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so
+[5.556s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_typesupport_cpp.so" to ""
+[5.619s] Listing '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg'...
+[5.619s] Compiling '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/__init__.py'...
+[5.619s] Listing '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg'...
+[5.620s] Compiling '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/__init__.py'...
+[5.620s] Compiling '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_detected_object.py'...
+[5.620s] Compiling '/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/local/lib/python3.10/dist-packages/interfaces_pkg/msg/_yolov8_objects.py'...
+[5.623s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so
+[5.624s] -- Set runtime path of "/home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/lib/libinterfaces_pkg__rosidl_generator_py.so" to ""
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cExport-noconfig.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.624s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cExport-noconfig.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_cppExport.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.625s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport.cmake
+[5.626s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/interfaces_pkg__rosidl_typesupport_cppExport-noconfig.cmake
+[5.626s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport.cmake
+[5.626s] -- Installing: /home/charmie/umib_sam2_yolov8_ros2_ws/install/interfaces_pkg/share/interfaces_pkg/cmake/export_interfaces_pkg__rosidl_generator_pyExport-noconfig.cmake
+[5.628s] Invoked command in '/home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/charmie/umib_sam2_yolov8_ros2_ws/install/obj_det:/home/charmie/charmie_ws/install/charmie_yolo_pose:/home/charmie/charmie_ws/install/charmie_yolo_objects:/home/charmie/charmie_ws/install/charmie_storing_groceries:/home/charmie/charmie_ws/install/charmie_stickler_for_the_rules:/home/charmie/charmie_ws/install/charmie_std_functions:/home/charmie/charmie_ws/install/charmie_speakers:/home/charmie/charmie_ws/install/charmie_serve_breakfast:/home/charmie/charmie_ws/install/charmie_restaurant:/home/charmie/charmie_ws/install/charmie_receptionist:/home/charmie/charmie_ws/install/charmie_ps4_controller:/home/charmie/charmie_ws/install/charmie_point_cloud:/home/charmie/charmie_ws/install/charmie_person_recognition:/home/charmie/charmie_ws/install/charmie_odometry:/home/charmie/charmie_ws/install/charmie_obstacles:/home/charmie/charmie_ws/install/charmie_neck_dynamixel:/home/charmie/charmie_ws/install/charmie_navigation_sdnl:/home/charmie/charmie_ws/install/charmie_low_level:/home/charmie/charmie_ws/install/charmie_localisation:/home/charmie/charmie_ws/install/charmie_llm:/home/charmie/charmie_ws/install/charmie_lidar_hokuyo:/home/charmie/charmie_ws/install/charmie_inspection:/home/charmie/charmie_ws/install/charmie_gui:/home/charmie/charmie_ws/install/charmie_gpsr:/home/charmie/charmie_ws/install/charmie_face:/home/charmie/charmie_ws/install/charmie_demonstration:/home/charmie/charmie_ws/install/charmie_debug:/home/charmie/charmie_ws/install/charmie_clean_table:/home/charmie/charmie_ws/install/charmie_carry_luggage:/home/charmie/charmie_ws/install/charmie_audio:/home/charmie/charmie_ws/install/charmie_diagnostics:/home/charmie/charmie_ws/install/charmie_arm_ufactory:/opt/ros/humble /usr/bin/cmake --install /home/charmie/umib_sam2_yolov8_ros2_ws/build/interfaces_pkg

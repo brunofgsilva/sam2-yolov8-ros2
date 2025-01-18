@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Point, Pose2D
+from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
-from interfaces_pkg.msg import DetectedObject, Yolov8Objects
+from interfaces_pkg.msg import DetectedObject, Yolov8Objects, MaskDetection, ListOfMaskDetections, TrackingMask
 
 from cv_bridge import CvBridge
 import cv2
@@ -31,6 +31,7 @@ class Yolo_det(Node):
         
         # Publish Results
         self.detected_objects_publisher = self.create_publisher(Yolov8Objects, 'objects_detected_filtered', 10)
+        self.sam2_data_publisher = self.create_publisher(TrackingMask, 'sam2_data_filtered', 10)
         
         self.object_model = YOLO('yolov8m.pt')
         print("Sucessfully imported YOLO model")
@@ -38,10 +39,10 @@ class Yolo_det(Node):
         # Define paths for video or camera
         self.home = str(Path.home())
         midpath_videos = "umib_sam2_yolov8_ros2_ws/src/obj_det/obj_det/videos"
-        video_name = 'oranges.mp4'
+        video_name = 'birds.mp4'
         
         self.video_path = self.home + '/' + midpath_videos + '/' + video_name
-        # self.video_path = None  # Default to None for webcam
+        self.video_path = None  # Default to None for webcam
         
         
         # Define model and configurations
@@ -131,7 +132,7 @@ class Yolo_det(Node):
         self.tracking_received_labels.clear()
         self.obj_ids.clear()
 
-        desired_class = 'orange'
+        desired_class = 'bottle'
         
         
         for object_idx in range(num_obj):
@@ -232,6 +233,123 @@ class Yolo_det(Node):
     #     print('pc')
     
 
+    def combined_polygon_centroid(self, polygons, binary_mask):
+        
+        MIN_ACCEPTABLE_AREA = 100
+        total_area = 0
+        centroid_x = 0
+        centroid_y = 0
+        area_of_each_polygon = []
+        centroid_of_each_polygon = []
+        updated_filtered_polygons = []
+
+        # print(binary_mask)
+
+        print(len(polygons))
+
+        for polygon_points in polygons:
+            points = np.array(polygon_points, dtype=np.float32)
+            
+            # Skip invalid polygons
+            if len(points) < 3:
+                continue
+            if not np.array_equal(points[0], points[-1]):
+                points = np.vstack([points, points[0]])
+            
+            x = points[:, 0]
+            y = points[:, 1]
+            A = 0.5 * np.sum(x[:-1] * y[1:] - x[1:] * y[:-1]) # using the abolute value, because depending on the orientation (CW or CCW) the area may be returned as negative
+            
+            # Skip polygons with zero area
+            if abs(A) < MIN_ACCEPTABLE_AREA:
+                continue
+
+            Cx = np.sum((x[:-1] + x[1:]) * (x[:-1] * y[1:] - x[1:] * y[:-1])) / (6 * A)
+            Cy = np.sum((y[:-1] + y[1:]) * (x[:-1] * y[1:] - x[1:] * y[:-1])) / (6 * A)
+
+            # Convert centroid coordinates to binary mask space
+            Cx_ = max(0, min(binary_mask.shape[1] - 1, int(Cx + 0.5)))
+            Cy_ = max(0, min(binary_mask.shape[0] - 1, int(Cy + 0.5)))
+            
+            # Access binary mask value
+            mask_value = binary_mask[Cy_, Cx_]  # Note: mask is accessed as [row, col]
+
+            # print(f"Centroid: ({Cx_}, {Cy_}), Mask Value: {mask_value}, Area: {abs(A)}")
+
+            # Remove all polygons that are not part of the object being tracked (check if centroid is part of image mask)
+            if mask_value.all() == 0:
+                continue
+            
+            updated_filtered_polygons.append(polygon_points)
+            area_of_each_polygon.append(abs(A))
+            centroid_of_each_polygon.append((Cx, Cy))
+            
+            total_area += A
+            centroid_x += Cx * A
+            centroid_y += Cy * A
+
+            # print(centroid_x, centroid_y)
+
+        if total_area == 0:
+            return None, None, None, None  # No valid polygons
+        
+        # Final combined centroid
+        combined_Cx = centroid_x / total_area
+        combined_Cy = centroid_y / total_area
+        combined_C = (combined_Cx, combined_Cy)
+        print('centroid', combined_C)
+        return combined_C, updated_filtered_polygons, area_of_each_polygon, centroid_of_each_polygon
+
+
+
+    def filter_and_publish_tracking_data(self, polygons, binary_mask):
+
+        MIN_AREA_FOR_PC_CALCULATION = 4000
+
+        if polygons:
+            print('inside polygons')
+            centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon = self.combined_polygon_centroid(polygons, binary_mask)
+            
+            if centroid is not None:
+                print('.')
+                
+                msg = TrackingMask()
+                msg.centroid.x = float(centroid[0])
+                msg.centroid.y = float(centroid[1])
+                print('.')
+                list_masks = ListOfMaskDetections()
+                requested_objects = []
+
+                print('-')
+                
+                for p in updated_filtered_polygons: # only goes through filtres polygons, rather than all polygons
+
+                    new_mask = MaskDetection()
+                    for c in p:
+                            
+                        points_mask = Point()
+                        points_mask.x = float(c[0])
+                        points_mask.y = float(c[1])
+                        points_mask.z = 0.0
+                        new_mask.point.append(points_mask)
+
+                    list_masks.masks.append(new_mask)
+                    requested_objects.append(new_mask)
+                
+                # msg.binary_mask = self.node.br.cv2_to_imgmsg(white_mask, encoding='mono8')
+                msg.mask = list_masks
+                print('-')
+                # AQUI DEVO PUBLICAR NO TÓPICO 
+
+                self.sam2_data_publisher.publish(msg)
+
+            else:
+                print('=')
+
+            return centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon
+        else:
+            print('else')
+
     def sam2_tracking(self, initial_obj_id, tracking_received_points, tracking_received_labels, frame):
         print('sam2_tracking')
         
@@ -305,12 +423,41 @@ class Yolo_det(Node):
 
         for masks in best_masks:
             print('nr de mascaras: ', len(masks))
+            polygons = []
             for mask in masks:
+                print('MASK: ', mask)
+
+                # Convert the mask to a binary image (0 or 255)
+                mask_binary = (mask * 255).astype(np.uint8)  # This makes it a binary mask (0 and 255)
+
+                contours, _ = cv2.findContours(mask_binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+                for obj in contours:
+                    coords = []
+                        
+                    # for point in obj:
+                    #     coords.append(int(point[0][0]))
+                    #     coords.append(int(point[0][1]))
+                    for point in obj:
+                        coords.append([int(point[0][0]), int(point[0][1])])  # Store as [x, y]
+                    polygons.append(coords)
+                    # polygons.append(coords)
+
+                # Now call filter_and_publish_tracking_data for each individual binary mask
+                print('-')
+                if polygons == []:
+                    print('no polygon detected')
+                
+                else:
+                    centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon = self.filter_and_publish_tracking_data(polygons, mask_binary)
+                    print('binary mask used: ', mask_binary)
+                    print('Returned: ', centroid)
+
+
                 # Combine all masks into one array
                 if combined_mask is None:
-                    combined_mask = mask  # Initialize the combined mask
+                    combined_mask = mask_binary  # Initialize the combined mask
                 else:
-                    combined_mask = np.logical_or(combined_mask, mask)  # Combine masks using logical OR
+                    combined_mask = np.logical_or(combined_mask, mask_binary)  # Combine masks using logical OR
 
         if combined_mask is not None:
             # Convert the combined mask to a binary image (0 or 255)
@@ -329,7 +476,10 @@ class Yolo_det(Node):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 self.get_logger().info('Exiting...')
                 self.destroy_node()
+        
 
+        # centroid, updated_filtered_polygons, area_each_polygon, centroid_each_polygon = self.filter_and_publish_tracking_data(polygons, green_mask)
+        
         print('Tracking complete.')
 
                 
