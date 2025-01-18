@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interfaces_pkg/msg/ListOfMaskDetections.msg
+// generated code does not contain a copyright notice
+
+#include "interfaces_pkg/msg/MaskDetection.idl"
+
+module interfaces_pkg {
+  module msg {
+    @verbatim (language="comment", text=
+      "List of string messades for mass sending of strings")
+    struct ListOfMaskDetections {
+      sequence<interfaces_pkg::msg::MaskDetection> masks;
+    };
+  };
+};

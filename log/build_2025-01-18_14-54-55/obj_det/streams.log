@@ -1,0 +1,39 @@
+[1.988s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build
+[2.800s] running develop
+[2.800s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.801s]   warnings.warn(
+[3.447s] Removing /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj-det.egg-link (link to .)
+[3.491s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det' returned '0': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build
+[3.495s] Invoking command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data --force
+[4.281s] running egg_info
+[4.283s] writing ../../build/obj_det/obj_det.egg-info/PKG-INFO
+[4.283s] writing dependency_links to ../../build/obj_det/obj_det.egg-info/dependency_links.txt
+[4.283s] writing entry points to ../../build/obj_det/obj_det.egg-info/entry_points.txt
+[4.284s] writing requirements to ../../build/obj_det/obj_det.egg-info/requires.txt
+[4.284s] writing top-level names to ../../build/obj_det/obj_det.egg-info/top_level.txt
+[4.288s] reading manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+[4.288s] adding license file 'LICENSE'
+[4.290s] writing manifest file '../../build/obj_det/obj_det.egg-info/SOURCES.txt'
+[4.290s] running build
+[4.291s] running build_py
+[4.291s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build
+[4.291s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib
+[4.291s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[4.292s] copying obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[4.292s] copying obj_det/__init__.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det
+[4.292s] running install
+[4.293s] running install_lib
+[4.294s] creating /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[4.295s] copying /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det/obj_det_node.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[4.295s] copying /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build/lib/obj_det/__init__.py -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det
+[4.298s] byte-compiling /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det/obj_det_node.py to obj_det_node.cpython-310.pyc
+[4.304s] byte-compiling /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det/__init__.py to __init__.cpython-310.pyc
+[4.305s] running install_data
+[4.305s] copying resource/obj_det -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/ament_index/resource_index/packages
+[4.305s] copying package.xml -> /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/share/obj_det
+[4.305s] running install_egg_info
+[4.310s] Copying ../../build/obj_det/obj_det.egg-info to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages/obj_det-0.0.0-py3.10.egg-info
+[4.311s] running install_scripts
+[4.360s] Installing obj_det_node script to /home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/obj_det
+[4.361s] writing list of installed files to '/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log'
+[4.399s] Invoked command in '/home/bruno/umib_sam2_yolov8_ros2_ws/src/obj_det' returned '0': PYTHONPATH=/home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/prefix_override:/home/bruno/umib_sam2_yolov8_ros2_ws/install/obj_det/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/obj_det build --build-base /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/build install --record /home/bruno/umib_sam2_yolov8_ros2_ws/build/obj_det/install.log --single-version-externally-managed install_data --force
