@@ -540,7 +540,12 @@ class Yolo_det(Node):
                 self.destroy_node()
                 
         print('Tracking complete.')
-            
+          
+          
+          
+    def get_pc(self, mask, img, centroid):
+        print('inside PC')
+        
 
 def main(args=None):
     rclpy.init(args=args)
