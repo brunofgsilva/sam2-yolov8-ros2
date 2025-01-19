@@ -137,8 +137,8 @@ class Yolo_det(Node):
         self.tracking_received_labels.clear()
         self.obj_ids.clear()
 
-        # self.desired_class = 'cell phone'
-        self.desired_class = 'banana'
+        self.desired_class = 'cell phone'
+        # self.desired_class = 'bicycle'
         
         
         for object_idx in range(num_obj):
@@ -398,8 +398,26 @@ class Yolo_det(Node):
         # print('-')
 
         # Run the predictor to get the masks and scores
-        masks_batch, scores_batch, _ = self.predictor.predict_batch(pts_batch, labels_batch, box_batch=None, multimask_output=True)
+        if self.prev_nr_obj == 1:
+            # Prepare single point and label
+            single_point = np.array(tracking_received_points).reshape(1, 2)  # Shape (1, 2)
+            single_label = np.array(tracking_received_labels).reshape(1)  # Shape (1,)
 
+            # Call predict
+            single_mask, single_score, _ = self.predictor.predict(
+                point_coords=single_point,
+                point_labels=single_label,
+                box=None,
+                multimask_output=True
+            )
+
+            # Wrap outputs to match predict_batch format
+            masks_batch = [single_mask[np.newaxis, ...]]  # Wrap single mask into a batch format
+            scores_batch = [single_score[np.newaxis, ...]]  # Wrap single score into a batch format
+            
+        else:
+            masks_batch, scores_batch, _ = self.predictor.predict_batch(pts_batch, labels_batch, box_batch=None, multimask_output=True)
+        
         print('-')
         print(len(masks_batch), len(scores_batch))
         print(masks_batch, scores_batch)
@@ -434,8 +452,17 @@ class Yolo_det(Node):
 
                 # Convert the mask to a binary image (0 or 255)
                 
-                print(f"Processing mask with shape {mask.shape}")
-                print(f"Processing mask with size {mask.size}")
+                print(f"Processing mask with shape {mask.shape} and size {mask.size}")
+
+                # Ensure the mask is a 2D binary image
+                if mask.ndim != 2:
+                    print(f"Unexpected mask shape {mask.shape}. Reshaping...")
+                    mask = mask.reshape((frame.shape[0], frame.shape[1]))
+
+                # Validate mask size
+                if mask.shape != (frame.shape[0], frame.shape[1]):
+                    print(f"Resizing mask from {mask.shape} to {frame.shape[:2]}")
+                    mask = cv2.resize(mask, (frame.shape[1], frame.shape[0]), interpolation=cv2.INTER_NEAREST)
                 
                 # if mask.size == 640:
                 #     print("Expanding single-object mask to (480, 640).")
@@ -516,8 +543,14 @@ class Yolo_det(Node):
                 # Combine all masks into one array
                 if combined_mask is None:
                     combined_mask = mask_binary  # Initialize the combined mask
-                else:
-                    combined_mask = np.logical_or(combined_mask, mask_binary)  # Combine masks using logical OR
+                    print('hey')
+                # else:
+                #     combined_mask = np.logical_or(combined_mask, mask_binary)  # Combine masks using logical OR
+                elif combined_mask.size != mask_binary.size:
+                    print("Warning: Mask size mismatch. Resizing combined_mask.")
+                    # Resize combined_mask if sizes don't match (if required)
+                    combined_mask = np.resize(combined_mask, mask_binary.shape)
+            
             msg_list.nr_of_objects_detected = nr_objects_detected
         
         if list_of_objects != []:
@@ -542,9 +575,14 @@ class Yolo_det(Node):
         cv2.imshow("Combined Test Polygon", combined_teste)
         cv2.imshow("Combined Frame with Mask", accumulated_frame_with_mask)
 
-        if combined_mask is not None:
-            # Convert the combined mask to a binary image (0 or 255)
+        # if combined_mask is not None:
+        # Convert the combined mask to a binary image (0 or 255)
+            #combined_mask_image = (combined_mask * 255).astype(np.uint8)
+        if combined_mask is not None and combined_mask.size > 0:
+            print('here')
             combined_mask_image = (combined_mask * 255).astype(np.uint8)
+    
+            
             
             # Create a green overlay for the combined mask
             green_mask = np.zeros_like(frame, dtype=np.uint8)  # Same shape as the frame
@@ -558,11 +596,11 @@ class Yolo_det(Node):
 
             
             # Show the combined image
-            cv2.imshow("All Object Masks", combined_image)
+            # cv2.imshow("All Object Masks", combined_image)
             # cv2.waitKey(0)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                self.get_logger().info('Exiting...')
-                self.destroy_node()
+            # if cv2.waitKey(1) & 0xFF == ord('q'):
+            #     self.get_logger().info('Exiting...')
+            #     self.destroy_node()
                 
             # Display the result
             # cv2.imshow("Segmented Object", overlay)
@@ -573,12 +611,14 @@ class Yolo_det(Node):
             print("fps:", self.fps)
 
             # Show the combined image
-            cv2.imshow("Original frame", frame)
-            # cv2.waitKey(0)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                self.get_logger().info('Exiting...')
-                self.destroy_node()
-                
+            # cv2.imshow("Original frame", frame)
+            # # cv2.waitKey(0)
+            # if cv2.waitKey(1) & 0xFF == ord('q'):
+            #     self.get_logger().info('Exiting...')
+            #     self.destroy_node()
+        else:
+            print("Warning: No valid mask available to display for 'All Object Masks'.") 
+                 
         print('Tracking complete.')
             
 
